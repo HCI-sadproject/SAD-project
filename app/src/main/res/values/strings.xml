@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HCI</string>
+    <string name="title_health">Health</string>
+    <string name="title_survey">Survey</string>
+    <string name="title_home">Home</string>
+    <string name="title_diary">Diary</string>
+    <string name="title_lightinig">Lighting</string>
+</resources>
