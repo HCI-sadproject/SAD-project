@@ -25,9 +25,10 @@ public class HealthFragment extends Fragment {
         binding = FragmentHealthBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // 예시로 텍스트뷰를 사용하여 ViewModel의 데이터를 표시합니다.
-        final TextView textView = binding.textHealth;
-        healthViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        // View More 버튼 클릭 리스너
+        binding.btnViewMore.setOnClickListener(v -> {
+            // 상세 보기 화면으로 이동하는 로직 구현
+        });
 
         return root;
     }
