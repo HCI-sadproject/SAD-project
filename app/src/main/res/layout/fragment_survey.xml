@@ -1,22 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Diary.DiaryFragment">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/text_survey"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAD 설문"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 질문 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. 오늘 하루 전반적인 기분은 어떠셨나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/question1_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:paddingHorizontal="4dp">
+
+            <RadioButton
+                android:id="@+id/q1_answer1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="매우좋음"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q1_answer2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="좋음"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q1_answer3"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="보통"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q1_answer4"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="나쁨"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q1_answer5"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="매우나쁨"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+        </RadioGroup>
+
+        <!-- 질문 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. 오늘 스트레스를 많이 받으셨나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/question2_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:paddingHorizontal="4dp">
+
+            <RadioButton
+                android:id="@+id/q2_answer1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="매우그렇다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q2_answer2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="그렇다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q2_answer3"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="보통"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q2_answer4"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="아니다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q2_answer5"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="매우아니다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+        </RadioGroup>
+
+        <!-- 질문 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 오늘 충분한 휴식을 취하셨나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/question3_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:paddingHorizontal="4dp">
+
+            <RadioButton
+                android:id="@+id/q3_answer1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="매우그렇다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q3_answer2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="그렇다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q3_answer3"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="보통"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q3_answer4"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="아니다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+
+            <RadioButton
+                android:id="@+id/q3_answer5"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="매우아니다"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="제출하기"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#6200EE"/>
+
+    </LinearLayout>
+</ScrollView>
