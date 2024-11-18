@@ -10,7 +10,7 @@
         android:id="@+id/lighting_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="조명 페이지"
+             android:text="조명 페이지"
         android:textSize="24sp"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -79,10 +79,24 @@
         android:id="@+id/btn_light_toggle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="조명 On/Off"
         android:layout_margin="16dp"
-        android:padding="16dp"
+        android:layout_marginBottom="100dp"
         android:background="@android:color/black"
+        android:padding="16dp"
+        android:text="조명 On/Off"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_buttons"
+        app:layout_constraintVertical_bias="0.77"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="블루투스 연결"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/connection_status"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.hci.ui.Lighting;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -20,12 +21,12 @@ import com.example.hci.databinding.FragmentLightingBinding;
 import com.example.hci.bluetooth.BluetoothManager;
 
 import java.io.IOException;
+import java.util.Set;
 
 public class LightingFragment extends Fragment {
 
     private FragmentLightingBinding binding;
     private LightingViewModel lightingViewModel;
-    private static final String DEVICE_ADDRESS = "98:D3:31:F5:B9:E7"; // HC-06 MAC 주소를 실제 주소로 변경하세요
     private boolean isLightOn = false;
     private static final int PERMISSION_REQUEST_CODE = 1;
     private static final int ENABLE_BT_REQUEST_CODE = 2;
@@ -36,76 +37,27 @@ public class LightingFragment extends Fragment {
         binding = FragmentLightingBinding.inflate(inflater, container, false);
         lightingViewModel = new ViewModelProvider(this).get(LightingViewModel.class);
 
-        checkBluetoothPermissions();
         setupButtons();
         observeViewModel();
 
         return binding.getRoot();
     }
 
-    private void checkBluetoothPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            if (ActivityCompat.checkSelfPermission(requireContext(), 
-                    Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(requireContext(), 
-                    Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-                
-                requestPermissions(new String[]{
-                    Manifest.permission.BLUETOOTH_SCAN,
-                    Manifest.permission.BLUETOOTH_CONNECT
-                }, PERMISSION_REQUEST_CODE);
-                return;
-            }
-        }
-        initializeBluetooth();
-    }
-
-    private void initializeBluetooth() {
-        try {
-            if (!lightingViewModel.getBluetoothManager().isBluetoothEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, ENABLE_BT_REQUEST_CODE);
-            } else {
-                connectToDevice();
-            }
-        } catch (Exception e) {
-            showToast("블루투스 초기화 실패: " + e.getMessage());
-        }
-    }
-
-    private void connectToDevice() {
-        if (ActivityCompat.checkSelfPermission(requireContext(), 
-                Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-
-        new Thread(() -> {
-            try {
-                lightingViewModel.getBluetoothManager().connect(DEVICE_ADDRESS);
-                requireActivity().runOnUiThread(() -> {
-                    lightingViewModel.setIsConnected(true);
-                    lightingViewModel.setConnectionStatus("연결됨");
-                    showToast("블루투스 연결 성공");
-                });
-            } catch (IOException e) {
-                requireActivity().runOnUiThread(() -> {
-                    lightingViewModel.setIsConnected(false);
-                    lightingViewModel.setConnectionStatus("연결 실패");
-                    showToast("블루투스 연결 실패: " + e.getMessage());
-                });
-            }
-        }).start();
-    }
-
     private void setupButtons() {
+        // 블루투스 연결 버튼
+        binding.btnConnect.setOnClickListener(v -> {
+            checkBluetoothPermissions();
+        });
+
+        // 조명 토글 버튼
         binding.btnLightToggle.setOnClickListener(v -> {
             if (lightingViewModel.getIsConnected().getValue() != null && 
                 lightingViewModel.getIsConnected().getValue()) {
                 isLightOn = !isLightOn;
-                sendCommand(isLightOn ? "1" : "0");
+                sendCommand(isLightOn ? "ON" : "OFF");
                 binding.btnLightToggle.setText(isLightOn ? "조명 Off" : "조명 On");
             } else {
-                showToast("블루투스가 연결되지 않았습니다");
+                showToast("먼저 블루투스 연결 버튼을 눌러 연결해주세요");
             }
         });
 
@@ -161,7 +113,7 @@ public class LightingFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ENABLE_BT_REQUEST_CODE) {
             if (resultCode == -1) { // RESULT_OK
-                connectToDevice();
+                findBluetoothDevices();
             } else {
                 showToast("블루투스를 활성화해야 합니다");
             }
@@ -202,5 +154,87 @@ public class LightingFragment extends Fragment {
             binding.btnGreen.setEnabled(isConnected);
             binding.btnBrown.setEnabled(isConnected);
         });
+    }
+
+    private void findBluetoothDevices() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), 
+                Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+        
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
+                String deviceName = device.getName();
+                // HC-06 기기를 찾으면 자동으로 연 시도
+                if (deviceName != null && deviceName.equals("HC-06")) {
+                    connectToDevice(device.getAddress());
+                    return;
+                }
+            }
+            showToast("HC-06을 찾을 수 없습니다. 페어링이 되어있는지 확인해주세요.");
+        }
+    }
+
+    private void connectToDevice(String deviceAddress) {
+        if (ActivityCompat.checkSelfPermission(requireContext(), 
+                Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        new Thread(() -> {
+            try {
+                lightingViewModel.getBluetoothManager().connect(deviceAddress);
+                requireActivity().runOnUiThread(() -> {
+                    lightingViewModel.setIsConnected(true);
+                    lightingViewModel.setConnectionStatus("연결됨");
+                    showToast("블루투스 연결 성공");
+                });
+            } catch (IOException e) {
+                requireActivity().runOnUiThread(() -> {
+                    lightingViewModel.setIsConnected(false);
+                    lightingViewModel.setConnectionStatus("연결 실패");
+                    showToast("블루투스 연결 실패: " + e.getMessage());
+                });
+            }
+        }).start();
+    }
+
+    private void checkBluetoothPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (ActivityCompat.checkSelfPermission(requireContext(), 
+                    Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(requireContext(), 
+                    Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                
+                requestPermissions(new String[]{
+                    Manifest.permission.BLUETOOTH_SCAN,
+                    Manifest.permission.BLUETOOTH_CONNECT
+                }, PERMISSION_REQUEST_CODE);
+                return;
+            }
+        }
+        initializeBluetooth();
+    }
+
+    private void initializeBluetooth() {
+        try {
+            BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            if (bluetoothAdapter == null) {
+                showToast("이 기기는 블루투스를 지원하지 않습니다");
+                return;
+            }
+
+            if (!bluetoothAdapter.isEnabled()) {
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, ENABLE_BT_REQUEST_CODE);
+            } else {
+                findBluetoothDevices();
+            }
+        } catch (Exception e) {
+            showToast("블루투스 초기화 실패: " + e.getMessage());
+        }
     }
 }
