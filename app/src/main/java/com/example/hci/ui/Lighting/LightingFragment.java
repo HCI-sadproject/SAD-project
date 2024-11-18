@@ -71,6 +71,17 @@ public class LightingFragment extends Fragment {
             }
         });
 
+        // 컬러 피커 설정
+        binding.colorPicker.subscribe((color, fromUser, shouldPropagate) -> {
+            if (fromUser && lightingViewModel.getIsConnected().getValue() != null && 
+                lightingViewModel.getIsConnected().getValue()) {
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = color & 0xFF;
+                sendColorCommand(red, green, blue);
+            }
+        });
+
         // 다른 버튼들도 같은 방식으로 처리
     }
 
