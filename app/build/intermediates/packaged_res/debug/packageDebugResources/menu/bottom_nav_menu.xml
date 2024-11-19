@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_health"
+        android:icon="@drawable/icon1"
+        android:title="@string/title_health" />
+    <item
+        android:id="@+id/navigation_survey"
+        android:icon="@drawable/icon2"
+        android:title="@string/title_survey" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/icon3"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_diary"
+        android:icon="@drawable/icon4"
+        android:title="@string/title_diary" />
+
+    <item
+        android:id="@+id/navigation_lighting"
+        android:icon="@drawable/icon5"
+        android:title="@string/title_lightinig" />
+
+</menu>
