@@ -71,6 +71,26 @@ public class LightingFragment extends Fragment {
             }
         });
 
+        binding.btnGreen.setOnClickListener(v -> {
+            if (lightingViewModel.getIsConnected().getValue() != null && 
+                lightingViewModel.getIsConnected().getValue()) {
+                sendColorCommand(0, 255, 0);
+                showToast("그린 색상이 선택되었습니다");
+            } else {
+                showToast("블루투스가 연결되지 않았습니다");
+            }
+        });
+
+        binding.btnBrown.setOnClickListener(v -> {
+            if (lightingViewModel.getIsConnected().getValue() != null && 
+                lightingViewModel.getIsConnected().getValue()) {
+                sendColorCommand(165, 42, 42);
+                showToast("브라운 색상이 선택되었습니다");
+            } else {
+                showToast("블루투스가 연결되지 않았습니다");
+            }
+        });
+
         // 컬러 피커 설정
         binding.colorPicker.subscribe((color, fromUser, shouldPropagate) -> {
             if (fromUser && lightingViewModel.getIsConnected().getValue() != null && 
