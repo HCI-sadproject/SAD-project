@@ -81,6 +81,7 @@ id submitButton
 id watch_data
 id weather_info
 layout activity_main
+layout first_survey_intro
 layout fragment_diary
 layout fragment_health
 layout fragment_home

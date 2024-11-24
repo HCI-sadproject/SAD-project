@@ -20,6 +20,10 @@
         "source": "com.example.hci.app-main-48:/layout/fragment_health.xml"
     },
     {
+        "merged": "com.example.hci.app-mergeDebugResources-45:/layout/first_survey_intro.xml",
+        "source": "com.example.hci.app-main-48:/layout/first_survey_intro.xml"
+    },
+    {
         "merged": "com.example.hci.app-mergeDebugResources-45:/layout/fragment_home.xml",
         "source": "com.example.hci.app-main-48:/layout/fragment_home.xml"
     }
