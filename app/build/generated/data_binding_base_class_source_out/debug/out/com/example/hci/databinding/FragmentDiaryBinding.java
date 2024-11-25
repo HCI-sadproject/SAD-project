@@ -52,10 +52,14 @@ public final class FragmentDiaryBinding implements ViewBinding {
   @NonNull
   public final Button moodSad;
 
+  @NonNull
+  public final Button saveButton;
+
   private FragmentDiaryBinding(@NonNull ConstraintLayout rootView, @NonNull TextView dateHeader,
       @NonNull TextView dateText, @NonNull EditText diaryContent, @NonNull TextView diaryHeader,
       @NonNull Button moodAngry, @NonNull LinearLayout moodContainer, @NonNull Button moodHappy,
-      @NonNull TextView moodHeader, @NonNull Button moodNormal, @NonNull Button moodSad) {
+      @NonNull TextView moodHeader, @NonNull Button moodNormal, @NonNull Button moodSad,
+      @NonNull Button saveButton) {
     this.rootView = rootView;
     this.dateHeader = dateHeader;
     this.dateText = dateText;
@@ -67,6 +71,7 @@ public final class FragmentDiaryBinding implements ViewBinding {
     this.moodHeader = moodHeader;
     this.moodNormal = moodNormal;
     this.moodSad = moodSad;
+    this.saveButton = saveButton;
   }
 
   @Override
@@ -156,9 +161,15 @@ public final class FragmentDiaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.save_button;
+      Button saveButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveButton == null) {
+        break missingId;
+      }
+
       return new FragmentDiaryBinding((ConstraintLayout) rootView, dateHeader, dateText,
           diaryContent, diaryHeader, moodAngry, moodContainer, moodHappy, moodHeader, moodNormal,
-          moodSad);
+          moodSad, saveButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
