@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color mood_button_text
 color purple_200
 color purple_500
 color purple_700
@@ -25,6 +26,7 @@ drawable icon2
 drawable icon3
 drawable icon4
 drawable icon5
+drawable mood_button_background
 drawable radio_selector
 drawable rounded_background
 drawable sad
@@ -37,6 +39,7 @@ id btn_view_more
 id colorPicker
 id color_buttons
 id color_title
+id connection_section
 id connection_status
 id container
 id date_header

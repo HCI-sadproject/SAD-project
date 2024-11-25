@@ -1736,25 +1736,6 @@
             "outputFile": "com.example.hci.app-debug-46:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-project\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "806"
-                    },
-                    "to": {
-                        "startLines": "6414",
-                        "startColumns": "4",
-                        "startOffsets": "447922",
-                        "endLines": "6426",
-                        "endColumns": "12",
-                        "endOffsets": "448493"
-                    }
-                },
-                {
                     "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\91361a3d2038add804bcb7b490db6377\\transformed\\navigation-runtime-2.7.7\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,10,13",
@@ -1771,6 +1752,23 @@
                         "endLines": "1837,9323,12464,12470",
                         "endColumns": "52,24,24,24",
                         "endOffsets": "121930,642511,760013,760255"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,5,2,4,6,3",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "17,202,59,157,249,108",
+                        "endColumns": "40,45,47,43,52,47",
+                        "endOffsets": "53,243,102,196,297,151"
+                    },
+                    "to": {
+                        "startLines": "1996,2141,2142,2143,2144,2145",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "131763,151929,151975,152023,152067,152120",
+                        "endColumns": "40,45,47,43,52,47",
+                        "endOffsets": "131799,151970,152018,152062,152115,152163"
                     }
                 },
                 {
@@ -1867,23 +1865,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-project\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "7,2,3,4,5,6,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "293,57,105,153,201,247,336",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "330,99,147,195,241,287,373"
-                    },
-                    "to": {
-                        "startLines": "648,953,954,955,966,967,970",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "33134,55861,55908,55955,56699,56744,56910",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "33171,55903,55950,55997,56739,56784,56947"
-                    }
-                },
-                {
                     "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\4b49f850bbc0ff09143828a066b2582f\\transformed\\recyclerview-1.1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
@@ -1974,6 +1955,23 @@
                         "startOffsets": "122519,124697",
                         "endColumns": "41,59",
                         "endOffsets": "122556,124752"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "7,2,3,4,5,6,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "293,57,105,153,201,247,336",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "330,99,147,195,241,287,373"
+                    },
+                    "to": {
+                        "startLines": "648,953,954,955,966,967,970",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "33134,55861,55908,55955,56699,56744,56910",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "33171,55903,55950,55997,56739,56784,56947"
                     }
                 },
                 {
@@ -2068,6 +2066,25 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "806"
+                    },
+                    "to": {
+                        "startLines": "6414",
+                        "startColumns": "4",
+                        "startOffsets": "447922",
+                        "endLines": "6426",
+                        "endColumns": "12",
+                        "endOffsets": "448493"
+                    }
+                },
+                {
                     "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\4451502fa1ca6e380078ecff26a2327f\\transformed\\navigation-ui-2.7.7\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -2099,23 +2116,6 @@
                         "startOffsets": "121098,121138,122380,122604,122659,124263,124317,124369,124418,124479",
                         "endColumns": "39,46,42,54,46,53,51,48,60,49",
                         "endOffsets": "121133,121180,122418,122654,122701,124312,124364,124413,124474,124524"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-project\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,5,2,4,6,3",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "17,202,59,157,249,108",
-                        "endColumns": "40,45,47,43,52,47",
-                        "endOffsets": "53,243,102,196,297,151"
-                    },
-                    "to": {
-                        "startLines": "1996,2141,2142,2143,2144,2145",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "131763,151929,151975,152023,152067,152120",
-                        "endColumns": "40,45,47,43,52,47",
-                        "endOffsets": "131799,151970,152018,152062,152115,152163"
                     }
                 },
                 {
@@ -2174,23 +2174,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-project\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "90,149",
-                        "endColumns": "57,55",
-                        "endOffsets": "143,200"
-                    },
-                    "to": {
-                        "startLines": "1052,1053",
-                        "startColumns": "4,4",
-                        "startOffsets": "62401,62459",
-                        "endColumns": "57,55",
-                        "endOffsets": "62454,62510"
-                    }
-                },
-                {
                     "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\32baace14800518c85262d0e26f01325\\transformed\\colorpicker-0.0.15\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,18,21",
@@ -2226,6 +2209,23 @@
                         "endLines": "9353,9359,9369,12998,13002",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "643584,643762,644046,778480,778607"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "90,149",
+                        "endColumns": "57,55",
+                        "endOffsets": "143,200"
+                    },
+                    "to": {
+                        "startLines": "1052,1053",
+                        "startColumns": "4,4",
+                        "startOffsets": "62401,62459",
+                        "endColumns": "57,55",
+                        "endOffsets": "62454,62510"
                     }
                 },
                 {
@@ -5189,7 +5189,24 @@
             "outputFile": "com.example.hci.app-debug-46:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-project\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\bf5b30227300a25d3cdcc78feb6a09e8\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,47",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,4024",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,4108"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -5205,23 +5222,6 @@
                         "endLines": "21",
                         "endColumns": "12",
                         "endOffsets": "1258"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\myung\\.gradle\\caches\\transforms-4\\bf5b30227300a25d3cdcc78feb6a09e8\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,47",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,4024",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,4108"
                     }
                 },
                 {

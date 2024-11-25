@@ -8,12 +8,12 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_survey.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-45:/layout/fragment_survey.xml",
-        "source": "com.example.hci.app-main-48:/layout/fragment_survey.xml"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\activity_main.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.hci.app-mergeDebugResources-45:/layout/fragment_diary.xml",
+        "source": "com.example.hci.app-main-48:/layout/fragment_diary.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_lighting.xml",

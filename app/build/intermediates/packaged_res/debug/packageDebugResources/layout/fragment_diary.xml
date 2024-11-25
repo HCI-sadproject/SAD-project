@@ -52,6 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="행복"
+            android:background="@drawable/mood_button_background"
+            android:textColor="@color/mood_button_text"
             android:layout_margin="4dp"/>
 
         <Button
@@ -60,6 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="우울"
+            android:background="@drawable/mood_button_background"
+            android:textColor="@color/mood_button_text"
             android:layout_margin="4dp"/>
 
         <Button
@@ -68,6 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="평온"
+            android:background="@drawable/mood_button_background"
+            android:textColor="@color/mood_button_text"
             android:layout_margin="4dp"/>
 
         <Button
@@ -76,6 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="분노"
+            android:background="@drawable/mood_button_background"
+            android:textColor="@color/mood_button_text"
             android:layout_margin="4dp"/>
     </LinearLayout>
 
