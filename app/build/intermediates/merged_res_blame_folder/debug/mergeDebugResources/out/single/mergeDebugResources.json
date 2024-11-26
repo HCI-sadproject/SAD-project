@@ -88,10 +88,6 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_steps.png"
     },
     {
-        "merged": "com.example.hci.app-debug-46:/drawable_mood_button_background.xml.flat",
-        "source": "com.example.hci.app-main-48:/drawable/mood_button_background.xml"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon2.png.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon2.png"
     },
@@ -108,10 +104,6 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.hci.app-debug-46:/color_mood_button_text.xml.flat",
-        "source": "com.example.hci.app-main-48:/color/mood_button_text.xml"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\data_extraction_rules.xml"
     },
@@ -120,12 +112,12 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_lighting.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\color_mood_button_text.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\color\\mood_button_text.xml"
     },
     {
-        "merged": "com.example.hci.app-debug-46:/layout_fragment_diary.xml.flat",
-        "source": "com.example.hci.app-main-48:/layout/fragment_diary.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_lighting.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_survey.xml.flat",
@@ -170,6 +162,10 @@
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "com.example.hci.app-debug-46:/layout_fragment_home.xml.flat",
+        "source": "com.example.hci.app-main-48:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_date_background.xml.flat",
