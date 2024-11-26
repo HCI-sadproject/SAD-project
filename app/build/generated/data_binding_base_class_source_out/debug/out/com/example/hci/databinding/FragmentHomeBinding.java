@@ -23,13 +23,21 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView watchData;
 
   @NonNull
+  public final TextView watchLabel;
+
+  @NonNull
   public final TextView weatherInfo;
 
+  @NonNull
+  public final TextView weatherLabel;
+
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull TextView watchData,
-      @NonNull TextView weatherInfo) {
+      @NonNull TextView watchLabel, @NonNull TextView weatherInfo, @NonNull TextView weatherLabel) {
     this.rootView = rootView;
     this.watchData = watchData;
+    this.watchLabel = watchLabel;
     this.weatherInfo = weatherInfo;
+    this.weatherLabel = weatherLabel;
   }
 
   @Override
@@ -65,13 +73,26 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.watch_label;
+      TextView watchLabel = ViewBindings.findChildViewById(rootView, id);
+      if (watchLabel == null) {
+        break missingId;
+      }
+
       id = R.id.weather_info;
       TextView weatherInfo = ViewBindings.findChildViewById(rootView, id);
       if (weatherInfo == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, watchData, weatherInfo);
+      id = R.id.weather_label;
+      TextView weatherLabel = ViewBindings.findChildViewById(rootView, id);
+      if (weatherLabel == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((LinearLayout) rootView, watchData, watchLabel, weatherInfo,
+          weatherLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
