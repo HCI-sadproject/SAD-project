@@ -1,15 +1,15 @@
-from sklearn.linear_model import LinearRegression
-import joblib
-import pandas as pd
+from sklearn.linear_model import SGDRegressor
+from sklearn.preprocessing import StandardScaler
+import numpy as np
 
-# 데이터 로드
-data = pd.read_csv('training_data.csv')
-X = data[['solar_radiation', 'spaq_score']]
-y = data['sad_symptoms']
+# 온라인 학습 모델 초기화
+model = SGDRegressor(max_iter=1000, tol=1e-3)
+scaler = StandardScaler()
 
-# 모델 학습
-model = LinearRegression()
-model.fit(X, y)
-
-# 학습된 모델 저장
-joblib.dump(model, 'sad_model.pkl')
+def train_online_model(X_train, y_train):
+    global model, scaler
+    # 데이터 스케일링
+    X_train_scaled = scaler.fit_transform(X_train)
+    # 온라인 학습
+    model.partial_fit(X_train_scaled, y_train)
+    return model
