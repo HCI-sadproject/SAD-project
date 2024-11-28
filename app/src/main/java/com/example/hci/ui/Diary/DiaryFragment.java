@@ -57,10 +57,14 @@ public class DiaryFragment extends Fragment {
         binding.dateText.setOnClickListener(v -> showDatePicker());
 
         // 기분 버튼 클릭 리스너 설정
-        binding.moodHappy.setOnClickListener(v -> updateMoodSelection("행복"));
-        binding.moodSad.setOnClickListener(v -> updateMoodSelection("우울"));
-        binding.moodNormal.setOnClickListener(v -> updateMoodSelection("평온"));
-        binding.moodAngry.setOnClickListener(v -> updateMoodSelection("분노"));
+        binding.moodHappy.setOnClickListener(v -> updateMoodSelection("행복 ☺️"));
+        binding.moodExcited.setOnClickListener(v -> updateMoodSelection("신남 ⭐"));
+        binding.moodPeaceful.setOnClickListener(v -> updateMoodSelection("평온 ✨"));
+        binding.moodTired.setOnClickListener(v -> updateMoodSelection("피곤 💤"));
+        binding.moodSad.setOnClickListener(v -> updateMoodSelection("우울 ☔"));
+        binding.moodAngry.setOnClickListener(v -> updateMoodSelection("화남 ⚡"));
+        binding.moodAnxious.setOnClickListener(v -> updateMoodSelection("불안 💭"));
+        binding.moodSatisfied.setOnClickListener(v -> updateMoodSelection("뿌듯 ❤️"));
 
         // 저장 버튼 클릭 리스너
         binding.saveButton.setOnClickListener(v -> saveDiaryEntry());
@@ -73,23 +77,39 @@ public class DiaryFragment extends Fragment {
         
         // 모든 버튼 선택 해제
         binding.moodHappy.setSelected(false);
+        binding.moodExcited.setSelected(false);
+        binding.moodPeaceful.setSelected(false);
+        binding.moodTired.setSelected(false);
         binding.moodSad.setSelected(false);
-        binding.moodNormal.setSelected(false);
         binding.moodAngry.setSelected(false);
+        binding.moodAnxious.setSelected(false);
+        binding.moodSatisfied.setSelected(false);
 
         // 선택된 버튼만 선택 상태로 변경
         switch (mood) {
-            case "행복":
+            case "행복 ☺️":
                 binding.moodHappy.setSelected(true);
                 break;
-            case "우울":
+            case "신남 ⭐":
+                binding.moodExcited.setSelected(true);
+                break;
+            case "평온 ✨":
+                binding.moodPeaceful.setSelected(true);
+                break;
+            case "피곤 💤":
+                binding.moodTired.setSelected(true);
+                break;
+            case "우울 ☔":
                 binding.moodSad.setSelected(true);
                 break;
-            case "평온":
-                binding.moodNormal.setSelected(true);
-                break;
-            case "분노":
+            case "화남 ⚡":
                 binding.moodAngry.setSelected(true);
+                break;
+            case "불안 💭":
+                binding.moodAnxious.setSelected(true);
+                break;
+            case "뿌듯 ❤️":
+                binding.moodSatisfied.setSelected(true);
                 break;
         }
     }
