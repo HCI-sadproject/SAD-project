@@ -138,10 +138,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public class PredictActivity extends AppCompatActivity {
 
-        private static final String FLASK_URL = "http://your-flask-server-address/predict"; // Flask 서버 URL
-        private FirebaseAuth mAuth;
 
 
 }

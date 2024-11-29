@@ -215,7 +215,7 @@ public class RegularSurveyFragment extends Fragment {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_predict);
+            setContentView(R.layout.fragment_regular_survery);
 
             // "Predict" 버튼을 찾고 클릭 이벤트를 연결
             Button predictButton = findViewById(R.id.submitButton);
