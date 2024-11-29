@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.hci.MainActivity;
 import com.example.hci.R;
 import com.example.hci.databinding.FragmentRegularSurveyBinding;
 import com.google.gson.Gson;
@@ -66,7 +67,8 @@ public class RegularSurveyFragment extends Fragment {
     private void setupSubmitButton() {
         binding.submitButton.setOnClickListener(v -> {
             if (validateInputs()) {
-                collectAndSaveData();
+                submitSurvey();
+                collectAndSaveData();// 설문 완료 시 7일 후 알림 설정
             }
         });
     }
@@ -186,8 +188,6 @@ public class RegularSurveyFragment extends Fragment {
         //             showError("서버 전송 실패: " + error.getMessage());
         //         }
         //     });
-
-        showSuccessDialog();
     }
 
     /**
@@ -237,5 +237,20 @@ public class RegularSurveyFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void submitSurvey() {
+        try {
+            collectAndSaveData();
+            
+            // MainActivity의 onSurveyCompleted 호출
+            if (getActivity() instanceof MainActivity) {
+                ((MainActivity) getActivity()).onSurveyCompleted();
+            }
+            
+            showSuccessDialog();
+        } catch (Exception e) {
+            showError("설문 제출 중 오류가 발생했습니다.");
+        }
     }
 } 
