@@ -1,4 +1,4 @@
-#Fri Nov 29 21:06:38 KST 2024
+#Fri Nov 29 21:18:13 KST 2024
 base.0=C\:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\myung\\AndroidStudioProjects\\SAD-projects\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
