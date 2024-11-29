@@ -53,9 +53,6 @@ public final class FragmentLightingBinding implements ViewBinding {
   public final TextView connectionStatus;
 
   @NonNull
-  public final TextView lightingTitle;
-
-  @NonNull
   public final TextView paletteTitle;
 
   private FragmentLightingBinding(@NonNull ScrollView rootView, @NonNull Button btnBlue,
@@ -63,7 +60,7 @@ public final class FragmentLightingBinding implements ViewBinding {
       @NonNull Button btnLightToggle, @NonNull LinearLayout colorButtons,
       @NonNull ColorPickerView colorPicker, @NonNull TextView colorTitle,
       @NonNull LinearLayout connectionSection, @NonNull TextView connectionStatus,
-      @NonNull TextView lightingTitle, @NonNull TextView paletteTitle) {
+      @NonNull TextView paletteTitle) {
     this.rootView = rootView;
     this.btnBlue = btnBlue;
     this.btnBrown = btnBrown;
@@ -75,7 +72,6 @@ public final class FragmentLightingBinding implements ViewBinding {
     this.colorTitle = colorTitle;
     this.connectionSection = connectionSection;
     this.connectionStatus = connectionStatus;
-    this.lightingTitle = lightingTitle;
     this.paletteTitle = paletteTitle;
   }
 
@@ -166,12 +162,6 @@ public final class FragmentLightingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lighting_title;
-      TextView lightingTitle = ViewBindings.findChildViewById(rootView, id);
-      if (lightingTitle == null) {
-        break missingId;
-      }
-
       id = R.id.palette_title;
       TextView paletteTitle = ViewBindings.findChildViewById(rootView, id);
       if (paletteTitle == null) {
@@ -180,7 +170,7 @@ public final class FragmentLightingBinding implements ViewBinding {
 
       return new FragmentLightingBinding((ScrollView) rootView, btnBlue, btnBrown, btnConnect,
           btnGreen, btnLightToggle, colorButtons, colorPicker, colorTitle, connectionSection,
-          connectionStatus, lightingTitle, paletteTitle);
+          connectionStatus, paletteTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

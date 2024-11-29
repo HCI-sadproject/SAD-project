@@ -1,19 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_dashboard_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_mood_button_background.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\mood_button_background.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_number_selection_grid.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\number_selection_grid.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_launcher_foreground.xml.flat",
@@ -24,30 +16,6 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\navigation_mobile_navigation.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\navigation\\mobile_navigation.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_button_background.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\button_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_notifications_black_24dp.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon5.png.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon5.png"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_heart_rate.png.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_heart_rate.png"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_first_survey_intro.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\first_survey_intro.xml"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
@@ -56,24 +24,12 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_diary.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_radio_selector.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\radio_selector.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_steps.png.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_steps.png"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_diary_background.xml.flat",
@@ -84,12 +40,8 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\rounded_background.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_steps.png.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_steps.png"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon2.png.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon2.png"
+        "merged": "com.example.hci.app-debug-46:/layout_fragment_regular_survey.xml.flat",
+        "source": "com.example.hci.app-main-48:/layout/fragment_regular_survey.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
@@ -104,20 +56,8 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\data_extraction_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\color_mood_button_text.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\color\\mood_button_text.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_lighting.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_survey.xml.flat",
@@ -148,8 +88,100 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_sleep.png"
     },
     {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_yes_no_radio_group.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\yes_no_radio_group.xml"
+    },
+    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_sad.jpg.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\sad.jpg"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon1.png.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_month_button_background.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\month_button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_month_grid_layout.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\month_grid_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_button_background.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon5.png.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon5.png"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_ic_heart_rate.png.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\ic_heart_rate.png"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_first_survey_intro.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\first_survey_intro.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_radio_selector.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\radio_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_initial_survey.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_initial_survey.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon2.png.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon2.png"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_lighting.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -160,20 +192,12 @@
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "com.example.hci.app-debug-46:/layout_fragment_home.xml.flat",
-        "source": "com.example.hci.app-main-48:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\layout_fragment_regular_survey.xml.flat",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_regular_survey.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_date_background.xml.flat",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\date_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon1.png.flat",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\drawable\\icon1.png"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-debug-46:\\drawable_icon3.png.flat",

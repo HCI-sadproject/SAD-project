@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -32,13 +33,16 @@ public final class FragmentDiaryBinding implements ViewBinding {
   public final EditText diaryContent;
 
   @NonNull
-  public final TextView diaryHeader;
-
-  @NonNull
   public final Button moodAngry;
 
   @NonNull
+  public final Button moodAnxious;
+
+  @NonNull
   public final LinearLayout moodContainer;
+
+  @NonNull
+  public final Button moodExcited;
 
   @NonNull
   public final Button moodHappy;
@@ -47,30 +51,45 @@ public final class FragmentDiaryBinding implements ViewBinding {
   public final TextView moodHeader;
 
   @NonNull
-  public final Button moodNormal;
+  public final Button moodPeaceful;
 
   @NonNull
   public final Button moodSad;
 
   @NonNull
+  public final Button moodSatisfied;
+
+  @NonNull
+  public final HorizontalScrollView moodScroll;
+
+  @NonNull
+  public final Button moodTired;
+
+  @NonNull
   public final Button saveButton;
 
   private FragmentDiaryBinding(@NonNull ConstraintLayout rootView, @NonNull TextView dateHeader,
-      @NonNull TextView dateText, @NonNull EditText diaryContent, @NonNull TextView diaryHeader,
-      @NonNull Button moodAngry, @NonNull LinearLayout moodContainer, @NonNull Button moodHappy,
-      @NonNull TextView moodHeader, @NonNull Button moodNormal, @NonNull Button moodSad,
+      @NonNull TextView dateText, @NonNull EditText diaryContent, @NonNull Button moodAngry,
+      @NonNull Button moodAnxious, @NonNull LinearLayout moodContainer, @NonNull Button moodExcited,
+      @NonNull Button moodHappy, @NonNull TextView moodHeader, @NonNull Button moodPeaceful,
+      @NonNull Button moodSad, @NonNull Button moodSatisfied,
+      @NonNull HorizontalScrollView moodScroll, @NonNull Button moodTired,
       @NonNull Button saveButton) {
     this.rootView = rootView;
     this.dateHeader = dateHeader;
     this.dateText = dateText;
     this.diaryContent = diaryContent;
-    this.diaryHeader = diaryHeader;
     this.moodAngry = moodAngry;
+    this.moodAnxious = moodAnxious;
     this.moodContainer = moodContainer;
+    this.moodExcited = moodExcited;
     this.moodHappy = moodHappy;
     this.moodHeader = moodHeader;
-    this.moodNormal = moodNormal;
+    this.moodPeaceful = moodPeaceful;
     this.moodSad = moodSad;
+    this.moodSatisfied = moodSatisfied;
+    this.moodScroll = moodScroll;
+    this.moodTired = moodTired;
     this.saveButton = saveButton;
   }
 
@@ -119,21 +138,27 @@ public final class FragmentDiaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.diary_header;
-      TextView diaryHeader = ViewBindings.findChildViewById(rootView, id);
-      if (diaryHeader == null) {
-        break missingId;
-      }
-
       id = R.id.mood_angry;
       Button moodAngry = ViewBindings.findChildViewById(rootView, id);
       if (moodAngry == null) {
         break missingId;
       }
 
+      id = R.id.mood_anxious;
+      Button moodAnxious = ViewBindings.findChildViewById(rootView, id);
+      if (moodAnxious == null) {
+        break missingId;
+      }
+
       id = R.id.mood_container;
       LinearLayout moodContainer = ViewBindings.findChildViewById(rootView, id);
       if (moodContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.mood_excited;
+      Button moodExcited = ViewBindings.findChildViewById(rootView, id);
+      if (moodExcited == null) {
         break missingId;
       }
 
@@ -149,15 +174,33 @@ public final class FragmentDiaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.mood_normal;
-      Button moodNormal = ViewBindings.findChildViewById(rootView, id);
-      if (moodNormal == null) {
+      id = R.id.mood_peaceful;
+      Button moodPeaceful = ViewBindings.findChildViewById(rootView, id);
+      if (moodPeaceful == null) {
         break missingId;
       }
 
       id = R.id.mood_sad;
       Button moodSad = ViewBindings.findChildViewById(rootView, id);
       if (moodSad == null) {
+        break missingId;
+      }
+
+      id = R.id.mood_satisfied;
+      Button moodSatisfied = ViewBindings.findChildViewById(rootView, id);
+      if (moodSatisfied == null) {
+        break missingId;
+      }
+
+      id = R.id.mood_scroll;
+      HorizontalScrollView moodScroll = ViewBindings.findChildViewById(rootView, id);
+      if (moodScroll == null) {
+        break missingId;
+      }
+
+      id = R.id.mood_tired;
+      Button moodTired = ViewBindings.findChildViewById(rootView, id);
+      if (moodTired == null) {
         break missingId;
       }
 
@@ -168,8 +211,8 @@ public final class FragmentDiaryBinding implements ViewBinding {
       }
 
       return new FragmentDiaryBinding((ConstraintLayout) rootView, dateHeader, dateText,
-          diaryContent, diaryHeader, moodAngry, moodContainer, moodHappy, moodHeader, moodNormal,
-          moodSad, saveButton);
+          diaryContent, moodAngry, moodAnxious, moodContainer, moodExcited, moodHappy, moodHeader,
+          moodPeaceful, moodSad, moodSatisfied, moodScroll, moodTired, saveButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

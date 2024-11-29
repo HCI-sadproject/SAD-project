@@ -1,34 +1,54 @@
 [
     {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\month_grid_layout.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\month_grid_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\number_selection_grid.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\number_selection_grid.xml"
+    },
+    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\first_survey_intro.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\first_survey_intro.xml"
+    },
+    {
+        "merged": "com.example.hci.app-mergeDebugResources-45:/layout/fragment_regular_survey.xml",
+        "source": "com.example.hci.app-main-48:/layout/fragment_regular_survey.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_survey.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_survey.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_initial_survey.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_initial_survey.xml"
     },
     {
-        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_lighting.xml",
-        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_health.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_health.xml"
     },
     {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_lighting.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_lighting.xml"
+    },
+    {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_diary.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_diary.xml"
+    },
+    {
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_regular_survey.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_regular_survey.xml"
     },
     {
         "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-45:/layout/fragment_home.xml",
-        "source": "com.example.hci.app-main-48:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-45:\\layout\\yes_no_radio_group.xml",
+        "source": "C:\\Users\\myung\\.gradle\\daemon\\8.7\\com.example.hci.app-main-48:\\layout\\yes_no_radio_group.xml"
     }
 ]

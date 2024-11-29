@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:2:1-47:12
 MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\myung\.gradle\caches\transforms-4\5bf71069431a30877f959bf5d94d62e0\transformed\viewbinding-8.6.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\myung\.gradle\caches\transforms-4\396d795c516ec3a20905fe31c9b7d211\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\myung\.gradle\caches\transforms-4\91361a3d2038add804bcb7b490db6377\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
@@ -50,6 +50,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\myung\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] C:\Users\myung\.gradle\caches\transforms-4\0c437b03677ca17fd759914a8a72fdbb\transformed\lifecycle-livedata-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.duanhong169:colorpicker:1.1.6] C:\Users\myung\.gradle\caches\transforms-4\963829423e47cf620b11591c54c7e9ca\transformed\colorpicker-1.1.6\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\myung\.gradle\caches\transforms-4\1606ad4a4354f8d8fb5d021875c554f3\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\myung\.gradle\caches\transforms-4\095e9c72185baf3764c800acfa0ab622\transformed\MPAndroidChart-v3.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\myung\.gradle\caches\transforms-4\092031b2a73646d19d8898d93764264d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\myung\.gradle\caches\transforms-4\53670f65e1b4bc76c9864b7676ab4609\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\myung\.gradle\caches\transforms-4\d3fdb7fb7bf212616321d35e8ef62672\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
@@ -101,9 +102,21 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
 		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:13:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:15:22-78
 application
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:14:5-34:19
-INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:14:5-34:19
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:17:5-45:19
+INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:17:5-45:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\myung\.gradle\caches\transforms-4\7b9de3578abc4c64d1a56ac55ba016eb\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\myung\.gradle\caches\transforms-4\7b9de3578abc4c64d1a56ac55ba016eb\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\myung\.gradle\caches\transforms-4\5d91c8f32253456d953823a0217a7f82\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -129,41 +142,55 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\myung\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\myung\.gradle\caches\transforms-4\583e2951ba4a9fd96e8d1a43d6b8a535\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:21:9-35
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:19:9-41
-	android:fullBackupContent
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:17:9-54
-	android:roundIcon
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:20:9-42
-	tools:targetApi
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:23:9-29
-	android:icon
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:18:9-37
-	android:allowBackup
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:15:9-35
-	android:theme
 		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:22:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:20:9-54
+	android:roundIcon
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:23:9-42
+	tools:targetApi
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:26:9-29
+	android:icon
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:21:9-37
+	android:allowBackup
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:25:9-41
 	android:dataExtractionRules
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:16:9-65
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:19:9-65
 activity#com.example.hci.MainActivity
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:24:9-33:20
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:27:9-36:20
 	android:label
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:27:13-45
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:30:13-45
 	android:exported
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:26:13-36
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:25:13-41
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:28:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:34:27-74
+receiver#com.example.hci.notification.NotificationReceiver
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:37:9-44:20
+	android:enabled
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:39:13-35
+	android:exported
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:38:13-62
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:41:13-43:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:42:17-79
+	android:name
+		ADDED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml:42:25-76
 uses-sdk
 INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\myung\AndroidStudioProjects\SAD-projects\app\src\main\AndroidManifest.xml
@@ -260,6 +287,8 @@ MERGED from [com.github.duanhong169:colorpicker:1.1.6] C:\Users\myung\.gradle\ca
 MERGED from [com.github.duanhong169:colorpicker:1.1.6] C:\Users\myung\.gradle\caches\transforms-4\963829423e47cf620b11591c54c7e9ca\transformed\colorpicker-1.1.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\myung\.gradle\caches\transforms-4\1606ad4a4354f8d8fb5d021875c554f3\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\myung\.gradle\caches\transforms-4\1606ad4a4354f8d8fb5d021875c554f3\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\myung\.gradle\caches\transforms-4\095e9c72185baf3764c800acfa0ab622\transformed\MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\myung\.gradle\caches\transforms-4\095e9c72185baf3764c800acfa0ab622\transformed\MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\myung\.gradle\caches\transforms-4\092031b2a73646d19d8898d93764264d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\myung\.gradle\caches\transforms-4\092031b2a73646d19d8898d93764264d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\myung\.gradle\caches\transforms-4\53670f65e1b4bc76c9864b7676ab4609\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
