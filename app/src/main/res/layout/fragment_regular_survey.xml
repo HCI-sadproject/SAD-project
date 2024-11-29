@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -12,19 +11,20 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- 수면 섹션 -->
+        <!-- 1. 수면 섹션 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="수면 상태"
+            android:text="1. 수면 상태"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
 
+        <!-- 1-1. 기상 어려움 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="잠에서 깨는 것에 어려움을 느끼나요?"
+            android:text="1-1. 잠에서 깨는 것에 어려움을 느끼나요?"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
 
@@ -36,25 +36,41 @@
             android:layout_marginBottom="16dp">
 
             <RadioButton
-                android:id="@+id/wakeupNone"
+                android:id="@+id/wakeup_none"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="어려움 없음"/>
 
             <RadioButton
-                android:id="@+id/wakeupMild"
+                android:id="@+id/wakeup_mild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="약간 어려움"/>
 
-            <!-- 나머지 라디오 버튼들... -->
+            <RadioButton
+                android:id="@+id/wakeup_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보통 수준의 어려움"/>
+
+            <RadioButton
+                android:id="@+id/wakeup_severe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심한 어려움"/>
+
+            <RadioButton
+                android:id="@+id/wakeup_extreme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="극심한 어려움"/>
         </RadioGroup>
 
-        <!-- 수면 시간 입력 -->
+        <!-- 1-2. 수면 시간 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이번 주 평균 수면 시간"
+            android:text="1-2. 이번 주에 평균 몇 시간 정도 주무셨나요?"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
 
@@ -66,8 +82,271 @@
             android:hint="시간 입력 (0-24)"
             android:layout_marginBottom="24dp"/>
 
-        <!-- 나머지 질문들... -->
+        <!-- 2. 사회적 활동 섹션 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. 사회적 활동"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
 
+        <!-- 2-1. 사회적 활동 거부감 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2-1. 사회적 활동에 거부감이나 피로감을 느끼고 있나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/socialAnxietyGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/social_none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="없음"/>
+
+            <RadioButton
+                android:id="@+id/social_mild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="약간"/>
+
+            <RadioButton
+                android:id="@+id/social_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보통"/>
+
+            <RadioButton
+                android:id="@+id/social_severe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심하게"/>
+
+            <RadioButton
+                android:id="@+id/social_extreme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="극심하게"/>
+        </RadioGroup>
+
+        <!-- 2-2. 소통 일수 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2-2. 이번 주에 타인과 짧은 대화 이상의 소통을 진행한 일수를 알려주세요"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/socialDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="일수 입력 (0-7)"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 3. 기분 섹션 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 기분 상태"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 3-1. 우울감 정도 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-1. 어느 정도의 우울감을 겪고 있나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/depressionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/depression_none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="우울감 없음"/>
+
+            <RadioButton
+                android:id="@+id/depression_mild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="약간 우울"/>
+
+            <RadioButton
+                android:id="@+id/depression_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보통 수준의 우울"/>
+
+            <RadioButton
+                android:id="@+id/depression_severe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심한 우울감"/>
+
+            <RadioButton
+                android:id="@+id/depression_extreme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="극심한 우울감"/>
+        </RadioGroup>
+
+        <!-- 4. 체중 변화 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. 체중이 평소와 비교해서 어떠신가요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/weightGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/weight_very_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 적게 나간다"/>
+
+            <RadioButton
+                android:id="@+id/weight_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="적게 나간다"/>
+
+            <RadioButton
+                android:id="@+id/weight_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평소와 비슷하다"/>
+
+            <RadioButton
+                android:id="@+id/weight_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="많이 나간다"/>
+
+            <RadioButton
+                android:id="@+id/weight_very_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 많이 나간다"/>
+        </RadioGroup>
+
+        <!-- 5. 식욕 변화 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. 식욕이 평소와 비교해서 어떠신가요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/appetiteGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/appetite_very_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 적다"/>
+
+            <RadioButton
+                android:id="@+id/appetite_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="적다"/>
+
+            <RadioButton
+                android:id="@+id/appetite_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="그대로다"/>
+
+            <RadioButton
+                android:id="@+id/appetite_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="늘었다"/>
+
+            <RadioButton
+                android:id="@+id/appetite_very_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 많이 늘었다"/>
+        </RadioGroup>
+
+        <!-- 6. 에너지 레벨 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. 에너지 레벨이 평소와 비교해서 어떠신가요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/energyGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/energy_very_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 낮다"/>
+
+            <RadioButton
+                android:id="@+id/energy_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="낮다"/>
+
+            <RadioButton
+                android:id="@+id/energy_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="그대로다"/>
+
+            <RadioButton
+                android:id="@+id/energy_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="높다"/>
+
+            <RadioButton
+                android:id="@+id/energy_very_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주 높다"/>
+        </RadioGroup>
+
+        <!-- 제출 버튼 -->
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
