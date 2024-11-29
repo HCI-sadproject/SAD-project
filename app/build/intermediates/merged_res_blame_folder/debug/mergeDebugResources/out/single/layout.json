@@ -1,26 +1,34 @@
 [
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/fragment_diary.xml",
-        "source": "com.example.hci.app-main-6:/layout/fragment_diary.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_lighting.xml",
+        "source": "com.example.hci.app-main-7:/layout/fragment_lighting.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/fragment_lighting.xml",
-        "source": "com.example.hci.app-main-6:/layout/fragment_lighting.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_health.xml",
+        "source": "com.example.hci.app-main-7:/layout/fragment_health.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/fragment_health.xml",
-        "source": "com.example.hci.app-main-6:/layout/fragment_health.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/activity_main.xml",
+        "source": "com.example.hci.app-main-7:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/activity_main.xml",
-        "source": "com.example.hci.app-main-6:/layout/activity_main.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_home.xml",
+        "source": "com.example.hci.app-main-7:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/fragment_home.xml",
-        "source": "com.example.hci.app-main-6:/layout/fragment_home.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_survey.xml",
+        "source": "com.example.hci.app-main-7:/layout/fragment_survey.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-3:/layout/fragment_survey.xml",
-        "source": "com.example.hci.app-main-6:/layout/fragment_survey.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/register.xml",
+        "source": "com.example.hci.app-main-7:/layout/register.xml"
+    },
+    {
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/login.xml",
+        "source": "com.example.hci.app-main-7:/layout/login.xml"
+    },
+    {
+        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_diary.xml",
+        "source": "com.example.hci.app-main-7:/layout/fragment_diary.xml"
     }
 ]

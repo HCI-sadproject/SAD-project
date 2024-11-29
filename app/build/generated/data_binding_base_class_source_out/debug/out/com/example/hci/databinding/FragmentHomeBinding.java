@@ -4,6 +4,7 @@ package com.example.hci.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -23,12 +24,16 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView watchData;
 
   @NonNull
+  public final ImageView weatherIcon;
+
+  @NonNull
   public final TextView weatherInfo;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull TextView watchData,
-      @NonNull TextView weatherInfo) {
+      @NonNull ImageView weatherIcon, @NonNull TextView weatherInfo) {
     this.rootView = rootView;
     this.watchData = watchData;
+    this.weatherIcon = weatherIcon;
     this.weatherInfo = weatherInfo;
   }
 
@@ -65,13 +70,19 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.weather_icon;
+      ImageView weatherIcon = ViewBindings.findChildViewById(rootView, id);
+      if (weatherIcon == null) {
+        break missingId;
+      }
+
       id = R.id.weather_info;
       TextView weatherInfo = ViewBindings.findChildViewById(rootView, id);
       if (weatherInfo == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, watchData, weatherInfo);
+      return new FragmentHomeBinding((LinearLayout) rootView, watchData, weatherIcon, weatherInfo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

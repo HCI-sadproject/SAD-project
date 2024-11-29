@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
 
     // Add the dependency for the Google services Gradle plugin
-    id 'com.google.gms.google-services' version '4.4.2' apply false
+    id 'com.google.gms.google-services'
 
 }
 
@@ -47,10 +47,16 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:33.6.0')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth:23.1.0'
     implementation libs.activity
     implementation libs.firebase.auth
     implementation libs.firebase.database
 
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Retrofit 라이브러리
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // Gson 컨버터
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3' // OkHttp 라이브러리
+
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 } 

@@ -9,29 +9,33 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.hci.HomeViewModelFactory;
 import com.example.hci.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentHomeBinding binding; // View Binding 객체 선언
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        HomeViewModelFactory factory = new HomeViewModelFactory(requireActivity().getApplication());
         HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+                new ViewModelProvider(this, factory).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // 날씨 정보 업데이트
         homeViewModel.getWeatherInfo().observe(getViewLifecycleOwner(), info -> {
             binding.weatherInfo.setText(info);
         });
 
-        // 워치 데이터 업데이트
+        /*
+        // 추가 데이터 업데이트 (필요시 활성화)
         homeViewModel.getWatchData().observe(getViewLifecycleOwner(), data -> {
             binding.watchData.setText(data);
         });
+        */
 
         return root;
     }
