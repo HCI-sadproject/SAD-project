@@ -33,7 +33,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.hci.databinding.ActivityMainBinding;
 
-mport com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
