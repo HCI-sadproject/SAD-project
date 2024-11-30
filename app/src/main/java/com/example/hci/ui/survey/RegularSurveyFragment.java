@@ -211,15 +211,18 @@ public class RegularSurveyFragment extends Fragment {
     public class PredictActivity extends AppCompatActivity {
 
         private static final String FLASK_URL = "http://192.168.219.104:5000"; // Flask 서버 URL (IP 주소는 변경 필요)
+        private FragmentRegularSurveyBinding binding; // ViewBinding을 사용하기 위한 변수
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.fragment_regular_survery);
 
-            // "Predict" 버튼을 찾고 클릭 이벤트를 연결
-            Button predictButton = findViewById(R.id.submitButton);
-            predictButton.setOnClickListener(new View.OnClickListener() {
+            // ViewBinding을 사용하여 레이아웃을 설정
+            binding = FragmentRegularSurveyBinding.inflate(getLayoutInflater());
+            setContentView(binding.getRoot()); // ViewBinding을 사용하여 root view 설정
+
+            // "Predict" 버튼을 클릭했을 때의 동작 설정
+            binding.submitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Firebase에서 현재 로그인한 사용자 가져오기
