@@ -210,7 +210,7 @@ public class RegularSurveyFragment extends Fragment {
 
     public class PredictActivity extends AppCompatActivity {
 
-        private static final String FLASK_URL = "http://192.168.219.104:5000"; // Flask 서버 URL (IP 주소는 변경 필요)
+        private static final String FLASK_URL = "http://192.168.219.104:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
         private FragmentRegularSurveyBinding binding; // ViewBinding을 사용하기 위한 변수
 
         @Override
