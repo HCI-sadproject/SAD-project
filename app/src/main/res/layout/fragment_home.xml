@@ -9,25 +9,36 @@
     <!-- Weather Information Section -->
     <!-- Section Title -->
     <TextView
+        android:id="@+id/weather_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Weather Information"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
+<<<<<<< HEAD
         android:textColor="#333333"/>
 
     <!-- Weather Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+=======
+        android:labelFor="@+id/weather_info" />
+
+    <!-- Watch Data Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="225dp"
+>>>>>>> origin/main
         android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#F5F5F5"
         app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#F5F5F5">
+        app:cardElevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="120dp"
             android:orientation="horizontal"
             android:padding="16dp"
@@ -57,13 +68,22 @@
 
 
     <!-- Watch Data Section -->
+=======
+            android:layout_height="215dp"
+            android:contentDescription="Current weather information will be displayed here"
+            android:padding="16dp" />
+    </androidx.cardview.widget.CardView>
+
+>>>>>>> origin/main
     <TextView
+        android:id="@+id/watch_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Watch Data"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:labelFor="@+id/watch_data" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -77,7 +97,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:contentDescription="Watch data will be displayed here" />
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

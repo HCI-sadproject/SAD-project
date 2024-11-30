@@ -1,17 +1,28 @@
 package com.example.hci.ui.survey;
 
+import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
-
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.hci.databinding.FragmentSurveyBinding;
+import java.util.List;
+import java.util.ArrayList;
+import com.example.hci.R;
 
 public class SurveyFragment extends Fragment {
 
@@ -21,43 +32,42 @@ public class SurveyFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        surveyViewModel = new ViewModelProvider(this).get(SurveyViewModel.class);
         binding = FragmentSurveyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // 각 RadioGroup에 리스너 설정
-        setupRadioGroupListener(binding.question1Group, 1);
-        setupRadioGroupListener(binding.question2Group, 2);
-        setupRadioGroupListener(binding.question3Group, 3);
-
-        // 제출 버튼 리스너
-        binding.submitButton.setOnClickListener(v -> {
-            if (surveyViewModel.isAllQuestionsAnswered()) {
-                surveyViewModel.submitSurvey();
-                // 제출 완료 메시지 표시
-                Toast.makeText(getContext(), "설문이 제출되었습니다.", Toast.LENGTH_SHORT).show();
-            } else {
-                // 미답변 항목 있음을 알림
-                Toast.makeText(getContext(), "모든 질문에 답해주세요.", Toast.LENGTH_SHORT).show();
-            }
-        });
+        setupButtons();
 
         return root;
     }
 
-    private void setupRadioGroupListener(RadioGroup group, int questionId) {
-        group.setOnCheckedChangeListener((radioGroup, checkedId) -> {
-            int answer = -1;
-            for (int i = 0; i < radioGroup.getChildCount(); i++) {
-                if (radioGroup.getChildAt(i).getId() == checkedId) {
-                    answer = i;
-                    break;
-                }
-            }
-            if (answer >= 0) {
-                surveyViewModel.setAnswer(questionId, answer);
+    private void setupButtons() {
+        // 초기 설문은 로그인 체크
+        binding.initialSurveyButton.setOnClickListener(v -> {
+            if (isLoggedIn()) {
+                Navigation.findNavController(v)
+                    .navigate(R.id.action_navigation_survey_to_initialSurveyFragment);
+            } else {
+                showLoginRequiredDialog();
             }
         });
+
+        // 상시 설문은 로그인 체크 없이 바로 이동
+        binding.regularSurveyButton.setOnClickListener(v -> 
+            Navigation.findNavController(v)
+                .navigate(R.id.action_navigation_survey_to_regularSurveyFragment));
+    }
+
+    private void showLoginRequiredDialog() {
+        new AlertDialog.Builder(requireContext())
+            .setTitle("로그인 필요")
+            .setMessage("초기 설문에 참여하려면 로그인이 필요합니다.")
+            .setPositiveButton("확인", null)
+            .show();
+    }
+
+    private boolean isLoggedIn() {
+        // 실제 로그인 상태 체크 로직 구현
+        return true; // 임시로 항상 true 반환
     }
 
     @Override

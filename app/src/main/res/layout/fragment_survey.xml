@@ -1,274 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#F5F5F5">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SAD 설문"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- 질문 1 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. 오늘 하루 전반적인 기분은 어떠셨나요?"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"/>
-
-        <RadioGroup
-            android:id="@+id/question1_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginBottom="24dp"
-            android:paddingHorizontal="4dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-            <RadioButton
-                android:id="@+id/q1_answer1"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="매우좋음"
-                android:textSize="12sp"
-                android:textAlignment="center"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="설문조사"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
                 android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
+                android:padding="20dp"/>
+        </androidx.cardview.widget.CardView>
 
-            <RadioButton
-                android:id="@+id/q1_answer2"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="좋음"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q1_answer3"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="보통"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q1_answer4"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="나쁨"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q1_answer5"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="매우나쁨"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-        </RadioGroup>
-
-        <!-- 질문 2 -->
-        <TextView
+        <androidx.cardview.widget.CardView
+            android:id="@+id/initialSurveyCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2. 오늘 스트레스를 많이 받으셨나요?"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-        <RadioGroup
-            android:id="@+id/question2_group"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="초기 설문"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAD 증상 진단을 위한 초기 설문입니다.\n회원가입 전에 진행해주세요."
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/initialSurveyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="초기 설문 시작하기"
+                    android:padding="12dp"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/regularSurveyCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp"
-            android:paddingHorizontal="4dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-            <RadioButton
-                android:id="@+id/q2_answer1"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="매우그렇다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <RadioButton
-                android:id="@+id/q2_answer2"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="그렇다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="상시 설문"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="8dp"/>
 
-            <RadioButton
-                android:id="@+id/q2_answer3"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="보통"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="현재 상태를 체크하기 위한 간단한 설문입니다.\n정기적으로 진행해주세요."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="16dp"/>
 
-            <RadioButton
-                android:id="@+id/q2_answer4"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="아니다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q2_answer5"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="매우아니다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-        </RadioGroup>
-
-        <!-- 질문 3 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. 오늘 충분한 휴식을 취하셨나요?"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"/>
-
-        <RadioGroup
-            android:id="@+id/question3_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp"
-            android:paddingHorizontal="4dp">
-
-            <RadioButton
-                android:id="@+id/q3_answer1"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="매우그렇다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q3_answer2"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="그렇다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q3_answer3"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="보통"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q3_answer4"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="아니다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-
-            <RadioButton
-                android:id="@+id/q3_answer5"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="매우아니다"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:button="@null"
-                android:background="@drawable/radio_selector"/>
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="제출하기"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#6200EE"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/regularSurveyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="상시 설문 시작하기"
+                    android:padding="12dp"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

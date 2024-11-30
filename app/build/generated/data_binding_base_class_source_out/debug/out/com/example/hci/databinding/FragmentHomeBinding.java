@@ -24,17 +24,32 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView watchData;
 
   @NonNull
+<<<<<<< HEAD
   public final ImageView weatherIcon;
+=======
+  public final TextView watchLabel;
+>>>>>>> origin/main
 
   @NonNull
   public final TextView weatherInfo;
 
+  @NonNull
+  public final TextView weatherLabel;
+
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull TextView watchData,
+<<<<<<< HEAD
       @NonNull ImageView weatherIcon, @NonNull TextView weatherInfo) {
     this.rootView = rootView;
     this.watchData = watchData;
     this.weatherIcon = weatherIcon;
+=======
+      @NonNull TextView watchLabel, @NonNull TextView weatherInfo, @NonNull TextView weatherLabel) {
+    this.rootView = rootView;
+    this.watchData = watchData;
+    this.watchLabel = watchLabel;
+>>>>>>> origin/main
     this.weatherInfo = weatherInfo;
+    this.weatherLabel = weatherLabel;
   }
 
   @Override
@@ -70,9 +85,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+<<<<<<< HEAD
       id = R.id.weather_icon;
       ImageView weatherIcon = ViewBindings.findChildViewById(rootView, id);
       if (weatherIcon == null) {
+=======
+      id = R.id.watch_label;
+      TextView watchLabel = ViewBindings.findChildViewById(rootView, id);
+      if (watchLabel == null) {
+>>>>>>> origin/main
         break missingId;
       }
 
@@ -82,7 +103,18 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+<<<<<<< HEAD
       return new FragmentHomeBinding((LinearLayout) rootView, watchData, weatherIcon, weatherInfo);
+=======
+      id = R.id.weather_label;
+      TextView weatherLabel = ViewBindings.findChildViewById(rootView, id);
+      if (weatherLabel == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((LinearLayout) rootView, watchData, watchLabel, weatherInfo,
+          weatherLabel);
+>>>>>>> origin/main
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

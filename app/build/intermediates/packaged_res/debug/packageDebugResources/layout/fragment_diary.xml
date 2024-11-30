@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -13,6 +14,7 @@
         android:text="날짜선택"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/brown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,72 +35,139 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="오늘의 기분"
+        android:textColor="@color/brown"
         android:textSize="16sp"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/date_header"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <LinearLayout
-        android:id="@+id/mood_container"
+    <HorizontalScrollView
+        android:id="@+id/mood_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="8dp"
+        android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/mood_header">
 
-        <Button
-            android:id="@+id/mood_happy"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/mood_container"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="행복"
-            android:layout_margin="4dp"/>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/mood_sad"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="우울"
-            android:layout_margin="4dp"/>
+            <!-- 첫 번째 줄 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/mood_normal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="평온"
-            android:layout_margin="4dp"/>
+                <Button
+                    android:id="@+id/mood_happy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="행복 ☺️"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
 
-        <Button
-            android:id="@+id/mood_angry"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="분노"
-            android:layout_margin="4dp"/>
-    </LinearLayout>
+                <Button
+                    android:id="@+id/mood_excited"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신남 ⭐"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/mood_peaceful"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평온 ✨"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/mood_tired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="피곤 💤"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+            </LinearLayout>
+
+            <!-- 두 번째 줄 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mood_sad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우울 ☔"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/mood_angry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화남 ⚡"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/mood_anxious"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="불안 💭"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/mood_satisfied"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="뿌듯 ❤️"
+                    android:background="@drawable/mood_button_background"
+                    android:textColor="@color/mood_button_text"
+                    android:layout_margin="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- 3줄 일기 섹션 -->
-    <TextView
-        android:id="@+id/diary_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="3줄 일기"
-        android:textSize="16sp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/mood_container"
-        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/diary_content"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/diary_background"
-        android:hint="오늘 하루를 간단히 기록해보세요..."
         android:gravity="top"
-        android:padding="12dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/diary_header"/>
+        android:hint="오늘 하루를 간단히 기록해보세요 "
+        android:inputType="textMultiLine"
+        android:maxLines="3"
+        android:minHeight="120dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/mood_scroll"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/diary_content"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

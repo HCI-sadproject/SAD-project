@@ -4,15 +4,14 @@ package com.example.hci.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.hci.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,92 +21,25 @@ public final class FragmentSurveyBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final RadioButton q1Answer1;
+  public final MaterialButton initialSurveyButton;
 
   @NonNull
-  public final RadioButton q1Answer2;
+  public final CardView initialSurveyCard;
 
   @NonNull
-  public final RadioButton q1Answer3;
+  public final MaterialButton regularSurveyButton;
 
   @NonNull
-  public final RadioButton q1Answer4;
+  public final CardView regularSurveyCard;
 
-  @NonNull
-  public final RadioButton q1Answer5;
-
-  @NonNull
-  public final RadioButton q2Answer1;
-
-  @NonNull
-  public final RadioButton q2Answer2;
-
-  @NonNull
-  public final RadioButton q2Answer3;
-
-  @NonNull
-  public final RadioButton q2Answer4;
-
-  @NonNull
-  public final RadioButton q2Answer5;
-
-  @NonNull
-  public final RadioButton q3Answer1;
-
-  @NonNull
-  public final RadioButton q3Answer2;
-
-  @NonNull
-  public final RadioButton q3Answer3;
-
-  @NonNull
-  public final RadioButton q3Answer4;
-
-  @NonNull
-  public final RadioButton q3Answer5;
-
-  @NonNull
-  public final RadioGroup question1Group;
-
-  @NonNull
-  public final RadioGroup question2Group;
-
-  @NonNull
-  public final RadioGroup question3Group;
-
-  @NonNull
-  public final Button submitButton;
-
-  private FragmentSurveyBinding(@NonNull ScrollView rootView, @NonNull RadioButton q1Answer1,
-      @NonNull RadioButton q1Answer2, @NonNull RadioButton q1Answer3,
-      @NonNull RadioButton q1Answer4, @NonNull RadioButton q1Answer5,
-      @NonNull RadioButton q2Answer1, @NonNull RadioButton q2Answer2,
-      @NonNull RadioButton q2Answer3, @NonNull RadioButton q2Answer4,
-      @NonNull RadioButton q2Answer5, @NonNull RadioButton q3Answer1,
-      @NonNull RadioButton q3Answer2, @NonNull RadioButton q3Answer3,
-      @NonNull RadioButton q3Answer4, @NonNull RadioButton q3Answer5,
-      @NonNull RadioGroup question1Group, @NonNull RadioGroup question2Group,
-      @NonNull RadioGroup question3Group, @NonNull Button submitButton) {
+  private FragmentSurveyBinding(@NonNull ScrollView rootView,
+      @NonNull MaterialButton initialSurveyButton, @NonNull CardView initialSurveyCard,
+      @NonNull MaterialButton regularSurveyButton, @NonNull CardView regularSurveyCard) {
     this.rootView = rootView;
-    this.q1Answer1 = q1Answer1;
-    this.q1Answer2 = q1Answer2;
-    this.q1Answer3 = q1Answer3;
-    this.q1Answer4 = q1Answer4;
-    this.q1Answer5 = q1Answer5;
-    this.q2Answer1 = q2Answer1;
-    this.q2Answer2 = q2Answer2;
-    this.q2Answer3 = q2Answer3;
-    this.q2Answer4 = q2Answer4;
-    this.q2Answer5 = q2Answer5;
-    this.q3Answer1 = q3Answer1;
-    this.q3Answer2 = q3Answer2;
-    this.q3Answer3 = q3Answer3;
-    this.q3Answer4 = q3Answer4;
-    this.q3Answer5 = q3Answer5;
-    this.question1Group = question1Group;
-    this.question2Group = question2Group;
-    this.question3Group = question3Group;
-    this.submitButton = submitButton;
+    this.initialSurveyButton = initialSurveyButton;
+    this.initialSurveyCard = initialSurveyCard;
+    this.regularSurveyButton = regularSurveyButton;
+    this.regularSurveyCard = regularSurveyCard;
   }
 
   @Override
@@ -137,124 +69,32 @@ public final class FragmentSurveyBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.q1_answer1;
-      RadioButton q1Answer1 = ViewBindings.findChildViewById(rootView, id);
-      if (q1Answer1 == null) {
+      id = R.id.initialSurveyButton;
+      MaterialButton initialSurveyButton = ViewBindings.findChildViewById(rootView, id);
+      if (initialSurveyButton == null) {
         break missingId;
       }
 
-      id = R.id.q1_answer2;
-      RadioButton q1Answer2 = ViewBindings.findChildViewById(rootView, id);
-      if (q1Answer2 == null) {
+      id = R.id.initialSurveyCard;
+      CardView initialSurveyCard = ViewBindings.findChildViewById(rootView, id);
+      if (initialSurveyCard == null) {
         break missingId;
       }
 
-      id = R.id.q1_answer3;
-      RadioButton q1Answer3 = ViewBindings.findChildViewById(rootView, id);
-      if (q1Answer3 == null) {
+      id = R.id.regularSurveyButton;
+      MaterialButton regularSurveyButton = ViewBindings.findChildViewById(rootView, id);
+      if (regularSurveyButton == null) {
         break missingId;
       }
 
-      id = R.id.q1_answer4;
-      RadioButton q1Answer4 = ViewBindings.findChildViewById(rootView, id);
-      if (q1Answer4 == null) {
+      id = R.id.regularSurveyCard;
+      CardView regularSurveyCard = ViewBindings.findChildViewById(rootView, id);
+      if (regularSurveyCard == null) {
         break missingId;
       }
 
-      id = R.id.q1_answer5;
-      RadioButton q1Answer5 = ViewBindings.findChildViewById(rootView, id);
-      if (q1Answer5 == null) {
-        break missingId;
-      }
-
-      id = R.id.q2_answer1;
-      RadioButton q2Answer1 = ViewBindings.findChildViewById(rootView, id);
-      if (q2Answer1 == null) {
-        break missingId;
-      }
-
-      id = R.id.q2_answer2;
-      RadioButton q2Answer2 = ViewBindings.findChildViewById(rootView, id);
-      if (q2Answer2 == null) {
-        break missingId;
-      }
-
-      id = R.id.q2_answer3;
-      RadioButton q2Answer3 = ViewBindings.findChildViewById(rootView, id);
-      if (q2Answer3 == null) {
-        break missingId;
-      }
-
-      id = R.id.q2_answer4;
-      RadioButton q2Answer4 = ViewBindings.findChildViewById(rootView, id);
-      if (q2Answer4 == null) {
-        break missingId;
-      }
-
-      id = R.id.q2_answer5;
-      RadioButton q2Answer5 = ViewBindings.findChildViewById(rootView, id);
-      if (q2Answer5 == null) {
-        break missingId;
-      }
-
-      id = R.id.q3_answer1;
-      RadioButton q3Answer1 = ViewBindings.findChildViewById(rootView, id);
-      if (q3Answer1 == null) {
-        break missingId;
-      }
-
-      id = R.id.q3_answer2;
-      RadioButton q3Answer2 = ViewBindings.findChildViewById(rootView, id);
-      if (q3Answer2 == null) {
-        break missingId;
-      }
-
-      id = R.id.q3_answer3;
-      RadioButton q3Answer3 = ViewBindings.findChildViewById(rootView, id);
-      if (q3Answer3 == null) {
-        break missingId;
-      }
-
-      id = R.id.q3_answer4;
-      RadioButton q3Answer4 = ViewBindings.findChildViewById(rootView, id);
-      if (q3Answer4 == null) {
-        break missingId;
-      }
-
-      id = R.id.q3_answer5;
-      RadioButton q3Answer5 = ViewBindings.findChildViewById(rootView, id);
-      if (q3Answer5 == null) {
-        break missingId;
-      }
-
-      id = R.id.question1_group;
-      RadioGroup question1Group = ViewBindings.findChildViewById(rootView, id);
-      if (question1Group == null) {
-        break missingId;
-      }
-
-      id = R.id.question2_group;
-      RadioGroup question2Group = ViewBindings.findChildViewById(rootView, id);
-      if (question2Group == null) {
-        break missingId;
-      }
-
-      id = R.id.question3_group;
-      RadioGroup question3Group = ViewBindings.findChildViewById(rootView, id);
-      if (question3Group == null) {
-        break missingId;
-      }
-
-      id = R.id.submitButton;
-      Button submitButton = ViewBindings.findChildViewById(rootView, id);
-      if (submitButton == null) {
-        break missingId;
-      }
-
-      return new FragmentSurveyBinding((ScrollView) rootView, q1Answer1, q1Answer2, q1Answer3,
-          q1Answer4, q1Answer5, q2Answer1, q2Answer2, q2Answer3, q2Answer4, q2Answer5, q3Answer1,
-          q3Answer2, q3Answer3, q3Answer4, q3Answer5, question1Group, question2Group,
-          question3Group, submitButton);
+      return new FragmentSurveyBinding((ScrollView) rootView, initialSurveyButton,
+          initialSurveyCard, regularSurveyButton, regularSurveyCard);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.hci.R;
@@ -20,7 +20,7 @@ import top.defaults.colorpicker.ColorPickerView;
 
 public final class FragmentLightingBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnBlue;
@@ -47,19 +47,19 @@ public final class FragmentLightingBinding implements ViewBinding {
   public final TextView colorTitle;
 
   @NonNull
-  public final TextView connectionStatus;
+  public final LinearLayout connectionSection;
 
   @NonNull
-  public final TextView lightingTitle;
+  public final TextView connectionStatus;
 
   @NonNull
   public final TextView paletteTitle;
 
-  private FragmentLightingBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnBlue,
+  private FragmentLightingBinding(@NonNull ScrollView rootView, @NonNull Button btnBlue,
       @NonNull Button btnBrown, @NonNull Button btnConnect, @NonNull Button btnGreen,
       @NonNull Button btnLightToggle, @NonNull LinearLayout colorButtons,
       @NonNull ColorPickerView colorPicker, @NonNull TextView colorTitle,
-      @NonNull TextView connectionStatus, @NonNull TextView lightingTitle,
+      @NonNull LinearLayout connectionSection, @NonNull TextView connectionStatus,
       @NonNull TextView paletteTitle) {
     this.rootView = rootView;
     this.btnBlue = btnBlue;
@@ -70,14 +70,14 @@ public final class FragmentLightingBinding implements ViewBinding {
     this.colorButtons = colorButtons;
     this.colorPicker = colorPicker;
     this.colorTitle = colorTitle;
+    this.connectionSection = connectionSection;
     this.connectionStatus = connectionStatus;
-    this.lightingTitle = lightingTitle;
     this.paletteTitle = paletteTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -150,15 +150,15 @@ public final class FragmentLightingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.connection_status;
-      TextView connectionStatus = ViewBindings.findChildViewById(rootView, id);
-      if (connectionStatus == null) {
+      id = R.id.connection_section;
+      LinearLayout connectionSection = ViewBindings.findChildViewById(rootView, id);
+      if (connectionSection == null) {
         break missingId;
       }
 
-      id = R.id.lighting_title;
-      TextView lightingTitle = ViewBindings.findChildViewById(rootView, id);
-      if (lightingTitle == null) {
+      id = R.id.connection_status;
+      TextView connectionStatus = ViewBindings.findChildViewById(rootView, id);
+      if (connectionStatus == null) {
         break missingId;
       }
 
@@ -168,9 +168,9 @@ public final class FragmentLightingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLightingBinding((ConstraintLayout) rootView, btnBlue, btnBrown, btnConnect,
-          btnGreen, btnLightToggle, colorButtons, colorPicker, colorTitle, connectionStatus,
-          lightingTitle, paletteTitle);
+      return new FragmentLightingBinding((ScrollView) rootView, btnBlue, btnBrown, btnConnect,
+          btnGreen, btnLightToggle, colorButtons, colorPicker, colorTitle, connectionSection,
+          connectionStatus, paletteTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

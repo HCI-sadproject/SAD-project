@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,6 +23,14 @@
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+=======
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+>>>>>>> origin/main
 
     <permission
         android:name="com.example.hci.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -43,7 +52,11 @@
         android:testOnly="true"
         android:theme="@style/Theme.HCI" >
         <activity
+<<<<<<< HEAD
             android:name="com.example.hci.LoginActivity"
+=======
+            android:name="com.example.hci.MainActivity"
+>>>>>>> origin/main
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
@@ -68,6 +81,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
+<<<<<<< HEAD
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -167,6 +181,17 @@
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
+=======
+        <receiver
+            android:name="com.example.hci.notification.NotificationReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+>>>>>>> origin/main
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.hci.androidx-startup"

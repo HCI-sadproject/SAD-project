@@ -30,4 +30,9 @@ public class SurveyViewModel extends ViewModel {
         // 설문 제출 로직 구현
         // 예: 서버에 데이터 전송 또는 로컬 저장
     }
+
+    public boolean shouldStopSurvey() {
+        // 설문 중단 조건 체크
+        return false; // 임시 반환값
+    }
 }
