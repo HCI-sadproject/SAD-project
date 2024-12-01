@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.core.content.ContextCompat;
 
 import com.example.hci.databinding.FragmentHealthBinding;
 import com.github.mikephil.charting.charts.LineChart;
@@ -212,16 +213,16 @@ public class HealthFragment extends Fragment {
                               List<Entry> depressionEntries, List<String> xLabels) {
         // LineDataSet 생성
         LineDataSet sleepDataSet = new LineDataSet(sleepEntries, "Sleep Hours");
-        sleepDataSet.setColor(getResources().getColor(R.colors.blue1));
-        sleepDataSet.setValueTextColor(getResources().getColor(R.colors.blue1));
+        sleepDataSet.setColor(ContextCompat.getColor(this,R.colors.blue1));
+        sleepDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.blue1));
 
         LineDataSet stepsDataSet = new LineDataSet(stepsEntries, "Steps");
-        stepsDataSet.setColor(getResources().getColor(R.colors.yellow));
-        stepsDataSet.setValueTextColor(getResources().getColor(R.colors.yellow));
+        stepsDataSet.setColor(ContextCompat.getColor(R.colors.yellow));
+        stepsDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.yellow));
 
         LineDataSet depressionDataSet = new LineDataSet(depressionEntries, "Depression Score");
-        depressionDataSet.setColor(getResources().getColor(R.colors.purple1));
-        depressionDataSet.setValueTextColor(getResources().getColor(R.colors.purple1));
+        depressionDataSet.setColor(ContextCompat.getColor(R.colors.purple1));
+        depressionDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.purple1));
 
         // LineData 설정
         LineData sleepData = new LineData(sleepDataSet);
