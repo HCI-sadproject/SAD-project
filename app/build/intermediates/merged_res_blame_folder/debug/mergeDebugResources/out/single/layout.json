@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_survey.xml",
         "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_survey.xml"
+    },
+    {
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\register.xml",

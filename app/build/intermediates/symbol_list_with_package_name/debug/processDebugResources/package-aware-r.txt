@@ -1427,6 +1427,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue1
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -2167,6 +2168,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple1
 color purple_200
 color purple_500
 color purple_700
@@ -2187,6 +2189,7 @@ color teal_700
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color yellow
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -3423,6 +3426,7 @@ id default_activity_button
 id deltaRelative
 id dependency_ordering
 id depressionGroup
+id depressionPredictionChart
 id depression_extreme
 id depression_frequency_grid
 id depression_mild
@@ -3848,6 +3852,7 @@ id showTitle
 id sin
 id skipCollapsed
 id skipped
+id sleepChart
 id sleepHours
 id slide
 id sliding_pane_detail_container
@@ -3883,6 +3888,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id stepsChart
 id stop
 id stretch
 id submenuarrow

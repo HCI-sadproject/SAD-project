@@ -1426,6 +1426,7 @@ int color background_floating_material_light 0x7f06001f
 int color background_material_dark 0x7f060020
 int color background_material_light 0x7f060021
 int color black 0x7f060022
+int color blue1 0x7f06031b
 int color bright_foreground_disabled_material_dark 0x7f060023
 int color bright_foreground_disabled_material_light 0x7f060024
 int color bright_foreground_inverse_material_dark 0x7f060025
@@ -2166,6 +2167,7 @@ int color primary_text_default_material_dark 0x7f060303
 int color primary_text_default_material_light 0x7f060304
 int color primary_text_disabled_material_dark 0x7f060305
 int color primary_text_disabled_material_light 0x7f060306
+int color purple1 0x7f06031c
 int color purple_200 0x7f060307
 int color purple_500 0x7f060308
 int color purple_700 0x7f060309
@@ -2186,6 +2188,7 @@ int color teal_700 0x7f060317
 int color tooltip_background_dark 0x7f060318
 int color tooltip_background_light 0x7f060319
 int color white 0x7f06031a
+int color yellow 0x7f06031d
 int dimen abc_action_bar_content_inset_material 0x7f070000
 int dimen abc_action_bar_content_inset_with_nav 0x7f070001
 int dimen abc_action_bar_default_height_material 0x7f070002
@@ -3422,6 +3425,7 @@ int id default_activity_button 0x7f0900b8
 int id deltaRelative 0x7f0900b9
 int id dependency_ordering 0x7f0900ba
 int id depressionGroup 0x7f0900bb
+int id depressionPredictionChart 0x7f0902ef
 int id depression_extreme 0x7f0900bc
 int id depression_frequency_grid 0x7f0900bd
 int id depression_mild 0x7f0900be
@@ -3847,6 +3851,7 @@ int id showTitle 0x7f090261
 int id sin 0x7f090262
 int id skipCollapsed 0x7f090263
 int id skipped 0x7f090264
+int id sleepChart 0x7f0902f0
 int id sleepHours 0x7f090265
 int id slide 0x7f090266
 int id sliding_pane_detail_container 0x7f090267
@@ -3882,6 +3887,7 @@ int id startToEnd 0x7f090284
 int id startVertical 0x7f090285
 int id staticLayout 0x7f090286
 int id staticPostLayout 0x7f090287
+int id stepsChart 0x7f0902f1
 int id stop 0x7f090288
 int id stretch 0x7f090289
 int id submenuarrow 0x7f09028a

@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.hci.R;
+import com.github.mikephil.charting.charts.LineChart;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,14 +28,28 @@ public final class FragmentHealthBinding implements ViewBinding {
   public final TextView currentScoreValue;
 
   @NonNull
+  public final LineChart depressionPredictionChart;
+
+  @NonNull
   public final TextView predictScoreValue;
 
+  @NonNull
+  public final LineChart sleepChart;
+
+  @NonNull
+  public final LineChart stepsChart;
+
   private FragmentHealthBinding(@NonNull LinearLayout rootView, @NonNull Button btnViewMore,
-      @NonNull TextView currentScoreValue, @NonNull TextView predictScoreValue) {
+      @NonNull TextView currentScoreValue, @NonNull LineChart depressionPredictionChart,
+      @NonNull TextView predictScoreValue, @NonNull LineChart sleepChart,
+      @NonNull LineChart stepsChart) {
     this.rootView = rootView;
     this.btnViewMore = btnViewMore;
     this.currentScoreValue = currentScoreValue;
+    this.depressionPredictionChart = depressionPredictionChart;
     this.predictScoreValue = predictScoreValue;
+    this.sleepChart = sleepChart;
+    this.stepsChart = stepsChart;
   }
 
   @Override
@@ -76,14 +91,32 @@ public final class FragmentHealthBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.depressionPredictionChart;
+      LineChart depressionPredictionChart = ViewBindings.findChildViewById(rootView, id);
+      if (depressionPredictionChart == null) {
+        break missingId;
+      }
+
       id = R.id.predict_score_value;
       TextView predictScoreValue = ViewBindings.findChildViewById(rootView, id);
       if (predictScoreValue == null) {
         break missingId;
       }
 
+      id = R.id.sleepChart;
+      LineChart sleepChart = ViewBindings.findChildViewById(rootView, id);
+      if (sleepChart == null) {
+        break missingId;
+      }
+
+      id = R.id.stepsChart;
+      LineChart stepsChart = ViewBindings.findChildViewById(rootView, id);
+      if (stepsChart == null) {
+        break missingId;
+      }
+
       return new FragmentHealthBinding((LinearLayout) rootView, btnViewMore, currentScoreValue,
-          predictScoreValue);
+          depressionPredictionChart, predictScoreValue, sleepChart, stepsChart);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3,16 +3,19 @@ local
 array seasons_array
 color Pink
 color black
+color blue1
 color brown
 color darkGray
 color gray
 color mood_button_text
+color purple1
 color purple_200
 color purple_500
 color purple_700
 color teal_200
 color teal_700
 color white
+color yellow
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 drawable back
@@ -79,6 +82,7 @@ id current_score_value
 id date_header
 id date_text
 id depressionGroup
+id depressionPredictionChart
 id depression_extreme
 id depression_frequency_grid
 id depression_mild
@@ -243,6 +247,7 @@ id section3_question6_group
 id section3_question7_group
 id section3_question8_group
 id section3_question9_group
+id sleepChart
 id sleepHours
 id socialAnxietyGroup
 id socialDays
@@ -252,6 +257,7 @@ id social_moderate
 id social_none
 id social_severe
 id spring_sleep_hours
+id stepsChart
 id submitButton
 id summer_sleep_hours
 id wakeupDifficultyGroup
