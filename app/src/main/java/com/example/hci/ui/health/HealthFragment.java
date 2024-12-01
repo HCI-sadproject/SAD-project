@@ -29,6 +29,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Calendar;
+import android.graphics.Color;
 
 public class HealthFragment extends Fragment {
 
@@ -178,10 +179,10 @@ public class HealthFragment extends Fragment {
         }
 
         // 초기 값 및 변수 설정
-        int index = 0;
-        double previousValue = -1; // 이전 값 저장 (비교용)
+        double[] previousValue = {-1}; // 이전 값을 저장하기 위한 배열 사용 (람다 내에서 변경 가능)
+        int[] index = {0}; // 탐색 횟수를 저장하기 위한 배열 사용
 
-        while (entries.size() < maxEntries && index < 100) { // 최대 100회 탐색 제한
+        while (entries.size() < maxEntries && index[0] < 100) { // 최대 100회 탐색 제한
             String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(calendar.getTime());
 
             db.collection("dummy_user")
@@ -194,8 +195,8 @@ public class HealthFragment extends Fragment {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists() && document.contains(field)) {
                                 double value = document.getDouble(field);
-                                if (value != previousValue) { // 값이 없거나 이전 값과 다를 경우
-                                    previousValue = value;
+                                if (value != previousValue[0]) { // 값이 없거나 이전 값과 다를 경우
+                                    previousValue[0] = value;
                                     entries.add(new Entry(entries.size(), (float) value));
                                     xLabels.add(currentDate.substring(5)); // MM-dd 형식 추가
                                 }
@@ -205,7 +206,7 @@ public class HealthFragment extends Fragment {
 
             // 다음 날짜로 이동
             calendar.add(Calendar.DATE, -1); // 하루 이전
-            index++;
+            index[0]++;
         }
     }
 
@@ -213,16 +214,16 @@ public class HealthFragment extends Fragment {
                               List<Entry> depressionEntries, List<String> xLabels) {
         // LineDataSet 생성
         LineDataSet sleepDataSet = new LineDataSet(sleepEntries, "Sleep Hours");
-        sleepDataSet.setColor(ContextCompat.getColor(this,R.colors.blue1));
-        sleepDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.blue1));
+        sleepDataSet.setColor(Color.parseColor("#3F7098")); // 파란색 (#0000FF)
+        sleepDataSet.setValueTextColor(Color.parseColor("#3F7098")); // 파란색 (#0000FF)
 
         LineDataSet stepsDataSet = new LineDataSet(stepsEntries, "Steps");
-        stepsDataSet.setColor(ContextCompat.getColor(R.colors.yellow));
-        stepsDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.yellow));
+        stepsDataSet.setColor(Color.parseColor("#F2BE5B")); // 노란색 (#FFFF00)
+        stepsDataSet.setValueTextColor(Color.parseColor("#F2BE5B")); // 노란색 (#FFFF00)
 
         LineDataSet depressionDataSet = new LineDataSet(depressionEntries, "Depression Score");
-        depressionDataSet.setColor(ContextCompat.getColor(R.colors.purple1));
-        depressionDataSet.setValueTextColor(ContextCompat.getColor(this,R.colors.purple1));
+        depressionDataSet.setColor(Color.parseColor("#615687")); // 보라색 (#800080)
+        depressionDataSet.setValueTextColor(Color.parseColor("#615687")); // 보라색 (#800080)
 
         // LineData 설정
         LineData sleepData = new LineData(sleepDataSet);
