@@ -27,7 +27,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+<<<<<<< HEAD
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.json.JSONObject;
+
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+=======
 import java.util.Locale;
+>>>>>>> origin/main
 
 /**
  * 상시 설문을 처리하는 Fragment
@@ -190,12 +209,87 @@ public class RegularSurveyFragment extends Fragment {
         //         public void onSuccess(Response response) {
         //             showSuccessDialog();
         //         }
-        //         
+        //
         //         @Override
         //         public void onError(Error error) {
         //             showError("서버 전송 실패: " + error.getMessage());
         //         }
         //     });
+    }
+
+    // 제출 버튼 리스너를 사용하고 있어서 이 리스너를 통해 데이터 저장도 해야한다면 같이 넣기
+
+    public class PredictActivity extends AppCompatActivity {
+
+        private static final String FLASK_URL = "http://192.168.219.104:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
+        private FragmentRegularSurveyBinding binding; // ViewBinding을 사용하기 위한 변수
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            // ViewBinding을 사용하여 레이아웃을 설정
+            binding = FragmentRegularSurveyBinding.inflate(getLayoutInflater());
+            setContentView(binding.getRoot()); // ViewBinding을 사용하여 root view 설정
+
+            // "Predict" 버튼을 클릭했을 때의 동작 설정
+            binding.submitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Firebase에서 현재 로그인한 사용자 가져오기
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        String uid = user.getUid(); // Firebase 사용자 UID를 가져옴
+                        sendPredictionRequest(uid); // UID를 Flask 서버로 전송
+                    } else {
+                        Toast.makeText(PredictActivity.this, "로그인된 사용자가 없습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+
+        /**
+         * Flask 서버로 사용자 UID를 전송하고 예측 요청 수행
+         * @param uid 현재 사용자의 Firebase UID
+         */
+        private void sendPredictionRequest(String uid) {
+            new Thread(() -> {
+                try {
+                    // Flask 서버의 예측 요청 URL에 연결
+                    URL url = new URL(FLASK_URL);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("POST");
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    connection.setDoOutput(true);
+
+                    // UID를 JSON 형식으로 생성
+                    JSONObject jsonRequest = new JSONObject();
+                    jsonRequest.put("uid", uid); // 요청 JSON에 UID 포함
+
+                    // 서버로 JSON 데이터를 전송
+                    OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+                    writer.write(jsonRequest.toString());
+                    writer.flush();
+                    writer.close();
+
+                    // 서버의 응답 코드 확인
+                    int responseCode = connection.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        Log.d("PredictActivity", "예측 요청 성공");
+                        runOnUiThread(() -> Toast.makeText(PredictActivity.this, "예측 요청이 성공적으로 전송되었습니다.", Toast.LENGTH_SHORT).show());
+                    } else {
+                        Log.e("PredictActivity", "예측 요청 실패: " + responseCode);
+                        runOnUiThread(() -> Toast.makeText(PredictActivity.this, "예측 요청 실패: " + responseCode, Toast.LENGTH_SHORT).show());
+                    }
+
+                    connection.disconnect();
+                } catch (Exception e) {
+                    // 예외 처리 (네트워크 오류, JSON 오류 등)
+                    Log.e("PredictActivity", "예측 요청 중 오류 발생", e);
+                    runOnUiThread(() -> Toast.makeText(PredictActivity.this, "오류 발생: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                }
+            }).start();
+        }
     }
 
     /**
