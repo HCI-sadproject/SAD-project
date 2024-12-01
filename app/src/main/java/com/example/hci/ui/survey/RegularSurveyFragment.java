@@ -374,7 +374,7 @@ public class RegularSurveyFragment extends Fragment {
         }
 
         // 제출한 날짜+시간 형식으로 문서 이름 생성
-        String timestamp = new SimpleDateFormat("yyMMdd_HHmm", Locale.getDefault()).format(new Date());
+        String timestamp = new SimpleDateFormat("YYYY-MM-DD", Locale.getDefault()).format(new Date());
 
         // 설문 데이터 수집
         HashMap<String, Object> surveyData = new HashMap<>();
