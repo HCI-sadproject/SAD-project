@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-<<<<<<< HEAD
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,9 +44,9 @@ import org.json.JSONObject;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-=======
+
 import java.util.Locale;
->>>>>>> origin/main
+
 
 /**
  * 상시 설문을 처리하는 Fragment
