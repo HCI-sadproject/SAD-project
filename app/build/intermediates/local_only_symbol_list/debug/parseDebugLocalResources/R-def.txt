@@ -75,6 +75,7 @@ id connection_section
 id connection_status
 id consecutive_years_group
 id container
+id current_score_value
 id date_header
 id date_text
 id depressionGroup
@@ -193,6 +194,7 @@ id number_7
 id number_8
 id number_9
 id palette_title
+id predict_score_value
 id pwText
 id question1_group
 id question2_group

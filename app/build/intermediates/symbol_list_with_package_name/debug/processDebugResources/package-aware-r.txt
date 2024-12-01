@@ -3408,6 +3408,7 @@ id cos
 id counterclockwise
 id cradle
 id currentState
+id current_score_value
 id custom
 id customPanel
 id cut
@@ -3751,6 +3752,7 @@ id percent
 id pin
 id position
 id postLayout
+id predict_score_value
 id pressed
 id progress_circular
 id progress_horizontal

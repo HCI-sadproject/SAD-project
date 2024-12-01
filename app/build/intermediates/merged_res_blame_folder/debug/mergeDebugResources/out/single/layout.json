@@ -1,58 +1,62 @@
 [
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_lighting.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_lighting.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_initial_survey.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_initial_survey.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_survey.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_survey.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/activity_main.xml",
-        "source": "com.example.hci.app-main-7:/layout/activity_main.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\register.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\register.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/number_selection_grid.xml",
-        "source": "com.example.hci.app-main-7:/layout/number_selection_grid.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\number_selection_grid.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\number_selection_grid.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_home.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_home.xml"
+        "merged": "com.example.hci.app-mergeDebugResources-57:/layout/fragment_health.xml",
+        "source": "com.example.hci.app-main-60:/layout/fragment_health.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_survey.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_survey.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/yes_no_radio_group.xml",
-        "source": "com.example.hci.app-main-7:/layout/yes_no_radio_group.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_initial_survey.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_initial_survey.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/register.xml",
-        "source": "com.example.hci.app-main-7:/layout/register.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\login.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\login.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/month_grid_layout.xml",
-        "source": "com.example.hci.app-main-7:/layout/month_grid_layout.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_health.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_health.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/first_survey_intro.xml",
-        "source": "com.example.hci.app-main-7:/layout/first_survey_intro.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\first_survey_intro.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\first_survey_intro.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/login.xml",
-        "source": "com.example.hci.app-main-7:/layout/login.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\yes_no_radio_group.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\yes_no_radio_group.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_diary.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_diary.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_lighting.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_lighting.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_health.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_health.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_diary.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_diary.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-4:/layout/fragment_regular_survey.xml",
-        "source": "com.example.hci.app-main-7:/layout/fragment_regular_survey.xml"
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\month_grid_layout.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\month_grid_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_regular_survey.xml",
+        "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_regular_survey.xml"
     }
 ]

@@ -105,8 +105,8 @@ public class HealthFragment extends Fragment {
     }
     private void displayData(double depressionScore, double predictionScore) {
         // 텍스트 뷰에 데이터 설정
-        binding.current_score_value.setText(String.format("Depression Score: %.1f", depressionScore));
-        binding.predict_score_value.setText(String.format("Prediction Score: %.1f", predictionScore));
+        binding.currentScoreValue.setText(String.format("Depression Score: %.1f", depressionScore));
+        binding.predictScoreValue.setText(String.format("Prediction Score: %.1f", predictionScore));
     }
 
 

@@ -19,7 +19,6 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="1"
-        android:gap="3dp"
         >
 
         <!-- 현재 점수 박스 -->
@@ -55,8 +54,7 @@
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
-                android:layout_gravity="center"
-                android:marginTop="8dp" />
+                android:layout_gravity="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,8 +87,7 @@
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
-                android:layout_gravity="center"
-                android:marginTop="8dp" />
+                android:layout_gravity="center" />
         </LinearLayout>
 
     </GridLayout>

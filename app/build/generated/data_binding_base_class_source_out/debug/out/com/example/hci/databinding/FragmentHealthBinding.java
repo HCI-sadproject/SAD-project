@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -22,9 +23,18 @@ public final class FragmentHealthBinding implements ViewBinding {
   @NonNull
   public final Button btnViewMore;
 
-  private FragmentHealthBinding(@NonNull LinearLayout rootView, @NonNull Button btnViewMore) {
+  @NonNull
+  public final TextView currentScoreValue;
+
+  @NonNull
+  public final TextView predictScoreValue;
+
+  private FragmentHealthBinding(@NonNull LinearLayout rootView, @NonNull Button btnViewMore,
+      @NonNull TextView currentScoreValue, @NonNull TextView predictScoreValue) {
     this.rootView = rootView;
     this.btnViewMore = btnViewMore;
+    this.currentScoreValue = currentScoreValue;
+    this.predictScoreValue = predictScoreValue;
   }
 
   @Override
@@ -60,7 +70,20 @@ public final class FragmentHealthBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHealthBinding((LinearLayout) rootView, btnViewMore);
+      id = R.id.current_score_value;
+      TextView currentScoreValue = ViewBindings.findChildViewById(rootView, id);
+      if (currentScoreValue == null) {
+        break missingId;
+      }
+
+      id = R.id.predict_score_value;
+      TextView predictScoreValue = ViewBindings.findChildViewById(rootView, id);
+      if (predictScoreValue == null) {
+        break missingId;
+      }
+
+      return new FragmentHealthBinding((LinearLayout) rootView, btnViewMore, currentScoreValue,
+          predictScoreValue);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
