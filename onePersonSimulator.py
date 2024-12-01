@@ -59,3 +59,4 @@ for week in test_data["Week"].unique():
 # Convert predictions to DataFrame
 lstm_results = pd.DataFrame(predictions)
 lstm_results.head()  # Show the first few predictions
+

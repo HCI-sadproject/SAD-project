@@ -7,3 +7,4 @@ def load_model():
 def predict_sad(features, model):
     features = np.array(features).reshape(1, -1)
     return model.predict(features)[0]
+

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "709909373812",
+    "firebase_url": "https://sadhci-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sadhci",
+    "storage_bucket": "sadhci.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709909373812:android:eea358a59d554539e58221",
+        "android_client_info": {
+          "package_name": "com.example.hci"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5qySKt_7D1GI5xfrE3cBiFPyyYpikurs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

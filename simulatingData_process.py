@@ -53,4 +53,3 @@ output_path = "C:/Users/KJY/SAD_Management/simulated_sad_data.csv"
 df.to_csv(output_path, index=False)
 
 output_path
-

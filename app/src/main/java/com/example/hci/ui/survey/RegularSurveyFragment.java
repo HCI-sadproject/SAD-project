@@ -2,6 +2,7 @@ package com.example.hci.ui.survey;
 
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,16 @@ import androidx.navigation.Navigation;
 import com.example.hci.MainActivity;
 import com.example.hci.R;
 import com.example.hci.databinding.FragmentRegularSurveyBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * 상시 설문을 처리하는 Fragment
@@ -29,14 +37,14 @@ public class RegularSurveyFragment extends Fragment {
     private FragmentRegularSurveyBinding binding;
     private RegularSurveyViewModel viewModel;
     private static final String SURVEY_DATA_KEY = "regular_survey_data";
-    
+
     // 모든 설문 데이터를 저장하는 정적 리스트
     // 백엔드 연동 시 이 데이터를 서버로 전송하면 됨
     private static List<RegularSurveyData> surveyDataList = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
-                            ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentRegularSurveyBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(this).get(RegularSurveyViewModel.class);
 
@@ -52,11 +60,11 @@ public class RegularSurveyFragment extends Fragment {
      */
     private void setupInputFilters() {
         binding.sleepHours.setFilters(new InputFilter[]{
-            new InputFilterMinMax(0, 24)
+                new InputFilterMinMax(0, 24)
         });
-        
+
         binding.socialDays.setFilters(new InputFilter[]{
-            new InputFilterMinMax(0, 7)
+                new InputFilterMinMax(0, 7)
         });
     }
 
@@ -131,28 +139,28 @@ public class RegularSurveyFragment extends Fragment {
 
     /**
      * 설문 데이터 수집 및 저장
-     * 
+     * <p>
      * 데이터 흐름:
      * 1. UI에서 사용자 입력 수집
      * 2. RegularSurveyData 객체 생성
      * 3. 정적 리스트에 저장
-     * 
+     * <p>
      * 백엔드 연동 시 고려사항:
      * - REST API 엔드포인트 구현 (/api/surveys/regular)
      * - 데이터 형식: JSON
      * - HTTP 메서드: POST
-     * 
+     * <p>
      * 예시 JSON 형식:
      * {
-     *   "wakeupDifficulty": "약간 어려움",
-     *   "sleepHours": 7,
-     *   "socialAnxiety": "없음",
-     *   "socialDays": 5,
-     *   "depressionLevel": "약간 우울",
-     *   "weightChange": "평소와 비슷하다",
-     *   "appetiteChange": "그대로다",
-     *   "energyLevel": "보통",
-     *   "submissionDate": "2024-03-21T14:30:00Z"
+     * "wakeupDifficulty": "약간 어려움",
+     * "sleepHours": 7,
+     * "socialAnxiety": "없음",
+     * "socialDays": 5,
+     * "depressionLevel": "약간 우울",
+     * "weightChange": "평소와 비슷하다",
+     * "appetiteChange": "그대로다",
+     * "energyLevel": "보통",
+     * "submissionDate": "2024-03-21T14:30:00Z"
      * }
      */
     private void collectAndSaveData() {
@@ -168,8 +176,8 @@ public class RegularSurveyFragment extends Fragment {
 
         // RegularSurveyData 객체 생성
         RegularSurveyData surveyData = new RegularSurveyData(
-            wakeupDifficulty, sleepHours, socialAnxiety, socialDays,
-            depressionLevel, weightChange, appetiteChange, energyLevel
+                wakeupDifficulty, sleepHours, socialAnxiety, socialDays,
+                depressionLevel, weightChange, appetiteChange, energyLevel
         );
 
         // 데이터 저장
@@ -208,14 +216,14 @@ public class RegularSurveyFragment extends Fragment {
      */
     private void showSuccessDialog() {
         new AlertDialog.Builder(requireContext())
-            .setTitle("제출 완료")
-            .setMessage("상시 설문이 성공적으로 제출되었습니다.")
-            .setPositiveButton("확인", (dialog, which) -> {
-                Navigation.findNavController(requireView())
-                    .navigate(R.id.action_regularSurveyFragment_to_navigation_home);
-            })
-            .setCancelable(false)
-            .show();
+                .setTitle("제출 완료")
+                .setMessage("상시 설문이 성공적으로 제출되었습니다.")
+                .setPositiveButton("확인", (dialog, which) -> {
+                    Navigation.findNavController(requireView())
+                            .navigate(R.id.action_regularSurveyFragment_to_navigation_home);
+                })
+                .setCancelable(false)
+                .show();
     }
 
     /**
@@ -241,16 +249,66 @@ public class RegularSurveyFragment extends Fragment {
 
     private void submitSurvey() {
         try {
+            // 설문 데이터를 수집하고 저장
             collectAndSaveData();
-            
+
+            // 설문 데이터를 Firestore에 저장
+            saveSurveyToFirestore();
+
             // MainActivity의 onSurveyCompleted 호출
             if (getActivity() instanceof MainActivity) {
                 ((MainActivity) getActivity()).onSurveyCompleted();
             }
-            
+
+            // 성공 다이얼로그 표시
             showSuccessDialog();
         } catch (Exception e) {
-            showError("설문 제출 중 오류가 발생했습니다.");
+            Log.e("RegularSurveyFragment", "submitSurvey Error: ", e);
+            showError("설문 제출 중 오류가 발생했습니다: " + e.getMessage());
         }
     }
-} 
+
+    private void saveSurveyToFirestore() {
+        // Firestore 인스턴스
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+
+        // UID 가져오기 (로그인 상태 확인)
+        String uid = FirebaseAuth.getInstance().getUid();
+        if (uid == null) {
+            showError("사용자 인증 정보가 없습니다. 다시 로그인해주세요.");
+            return;
+        }
+
+        // 제출한 날짜+시간 형식으로 문서 이름 생성
+        String timestamp = new SimpleDateFormat("yyMMdd_HHmm", Locale.getDefault()).format(new Date());
+
+        // 설문 데이터 수집
+        HashMap<String, Object> surveyData = new HashMap<>();
+        try {
+            surveyData.put("wakeupDifficulty", getSelectedRadioText(binding.wakeupDifficultyGroup));
+            surveyData.put("sleepHours", Integer.parseInt(binding.sleepHours.getText().toString()));
+            surveyData.put("socialAnxiety", getSelectedRadioText(binding.socialAnxietyGroup));
+            surveyData.put("socialDays", Integer.parseInt(binding.socialDays.getText().toString()));
+            surveyData.put("depressionLevel", getSelectedRadioText(binding.depressionGroup));
+            surveyData.put("weightChange", getSelectedRadioText(binding.weightGroup));
+            surveyData.put("appetiteChange", getSelectedRadioText(binding.appetiteGroup));
+            surveyData.put("energyLevel", getSelectedRadioText(binding.energyGroup));
+        } catch (NumberFormatException e) {
+            showError("숫자 입력 항목에 올바르지 않은 값이 있습니다.");
+            return;
+        }
+
+        // Firestore에 데이터 저장
+        firestore.collection("users")
+                .document(uid)
+                .collection("surveyResult")
+                .document(timestamp)
+                .set(surveyData)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(requireContext(), "설문 결과가 저장되었습니다.", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    showError("데이터 저장 중 오류 발생: " + e.getMessage());
+                });
+    }
+}
