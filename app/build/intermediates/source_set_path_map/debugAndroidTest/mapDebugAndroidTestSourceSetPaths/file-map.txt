@@ -1,0 +1,4 @@
+com.example.hci.test.app-androidTest-0 C:\Users\KJY\AndroidStudioProjects\SAD-project\app\build\generated\res\resValues\androidTest\debug
+com.example.hci.test.app-mergeDebugAndroidTestResources-1 C:\Users\KJY\AndroidStudioProjects\SAD-project\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.hci.test.app-mergeDebugAndroidTestResources-2 C:\Users\KJY\AndroidStudioProjects\SAD-project\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.hci.test.app-debugAndroidTest-3 C:\Users\KJY\AndroidStudioProjects\SAD-project\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
