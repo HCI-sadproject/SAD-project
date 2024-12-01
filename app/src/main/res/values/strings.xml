@@ -5,6 +5,9 @@
     <string name="title_home">Home</string>
     <string name="title_diary">Diary</string>
     <string name="title_lightinig">Lighting</string>
+
+    <string name="weather_icon">Weather Icon</string>
+
     <string-array name="seasons_array">
         <item>봄</item>
         <item>여름</item>
@@ -12,4 +15,3 @@
         <item>겨울</item>
     </string-array>
 </resources>
-

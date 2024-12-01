@@ -15,25 +15,48 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
-        android:labelFor="@+id/weather_info" />
+        android:labelFor="@+id/weather_info"
+        android:textColor="#333333" />
 
-    <!-- Watch Data Section -->
+    <!-- Weather Card -->
     <androidx.cardview.widget.CardView
-        android:layout_width="380dp"
-        android:layout_height="225dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         app:cardBackgroundColor="#F5F5F5"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp">
 
-        <TextView
-            android:id="@+id/weather_info"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="215dp"
-            android:contentDescription="Current weather information will be displayed here"
-            android:padding="16dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Weather Icon -->
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/weather_icon"
+                android:src="@drawable/sad"
+                android:scaleType="fitCenter" />
+
+            <!-- Weather Info -->
+            <TextView
+                android:id="@+id/weather_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fetching weather data..."
+                android:textSize="16sp"
+                android:textColor="#555555" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Watch Data Section -->
     <TextView
         android:id="@+id/watch_label"
         android:layout_width="match_parent"

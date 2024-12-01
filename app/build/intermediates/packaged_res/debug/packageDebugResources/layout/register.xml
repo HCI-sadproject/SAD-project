@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/registerLayout"
+    android:background="@color/white"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:text="회원 가입"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="1000px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="30dp"
+            android:background="@drawable/round_corner2"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/register_name"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:hint="이름"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/register_email"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_email_24"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:hint="이메일"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/register_password"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:hint="비밀번호 (6자리 이상)"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/register_pwCheck"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_check_24"
+                android:drawableLeft="@drawable/baseline_check_24"
+                android:hint="비밀번호 확인"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/register_birth"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_child_care_24"
+                android:drawableLeft="@drawable/baseline_child_care_24"
+                android:hint="생년월일 (YYYYMMDD)"
+                android:inputType="date"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/register_phone"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_700"
+                android:drawableStart="@drawable/baseline_local_phone_24"
+                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:hint="전화번호 ('-' 없이 입력)"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="18dp" />
+
+            <RadioGroup
+                android:id="@+id/register_gender"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/register_man"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="남성"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/register_woman"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="여성"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/register_marital_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/register_single"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="미혼"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/register_married"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="결혼"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/register_divorced"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="이혼"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/register_widowed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="사혼"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+            </RadioGroup>
+
+            <android.widget.Button
+                android:id="@+id/registerButton"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_button_pur"
+                android:text="회원가입"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_marginLeft="20dp"
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

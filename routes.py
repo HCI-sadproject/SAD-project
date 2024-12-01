@@ -1,14 +1,13 @@
 from flask import Flask, request, jsonify, Blueprint
-from firebase_utils import fetch_data, save_data, save_to_firestore, fetch_user_data
+from firebase_utils import fetch_data, save_to_firestore, fetch_user_data, save_prediction_to_firebase
 from model import train_model, predict_next
 import numpy as np
 from dummy_data import generate_dummy_data
 from flask import Flask, request, jsonify
 from lstm_model import predict_lstm, prepare_data, train_lstm
-from xgboost_model import predict_xgboost
-from regression_model import predict_regression
-from var_model import predict_var
-from firebase_utils import fetch_time_series_data, save_prediction_to_firebase
+#from xgboost_model import predict_xgboost
+#from regression_model import predict_regression
+#from var_model import predict_var
 from firebase_admin import firestore
 from datetime import datetime, timedelta
 
@@ -38,17 +37,19 @@ def predict():
     if not uid:
         return jsonify({"error": "UID not provided"}), 400
 
+    print(f"Received UID: {uid}")
+
     # Firestore에서 데이터 가져오기
     user_data = fetch_user_data(uid, db)
-    if not user_data:
+    if user_data is None or user_data.size == 0:  # 배열이 비어 있는지 확인
         return jsonify({'error': 'No data found for this user'}), 404
     
     # 날짜 설정
     start_index = 0                  # 9월 1일부터 시작
-    end_index = 30                   # 10월 1일까지 학습
-    target_index = 31                # 10월 2일 예측
+    end_index = 90                   # 10월 1일까지 학습
+    target_index = 91                # 10월 2일 예측
 
-    current_date += timedelta(days=1)
+    #current_date += timedelta(days=1)
 
     # 데이터 준비
     X_train, Y_train, X_input = prepare_data(user_data, start_index, end_index, target_index)
@@ -72,13 +73,15 @@ def predict():
 
     # (선택적으로) 결과 평균 또는 특정 기준에 따라 최종 결과 결정
     #final_prediction = (lstm_prediction + xgboost_prediction + regression_prediction + var_prediction) / 4
-    final_prediction = lstm_prediction
+    final_prediction = lstm_prediction.item()
 
 
     # 예측 결과를 Firebase에 저장
-    save_prediction_to_firebase(uid, final_prediction)
+    save_prediction_to_firebase(uid, final_prediction, target_index)
+    start_date = datetime(2024, 9, 1)
+    current_date = start_date + timedelta(days=target_index)
 
-    return jsonify({"uid": uid, "prediction": final_prediction})
+    return jsonify({"uid": uid, "prediction": final_prediction, "saved_date":current_date})
 
 
 

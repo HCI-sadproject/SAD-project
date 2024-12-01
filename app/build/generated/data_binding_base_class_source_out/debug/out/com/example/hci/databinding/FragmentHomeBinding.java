@@ -4,6 +4,7 @@ package com.example.hci.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -26,16 +27,21 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView watchLabel;
 
   @NonNull
+  public final ImageView weatherIcon;
+
+  @NonNull
   public final TextView weatherInfo;
 
   @NonNull
   public final TextView weatherLabel;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull TextView watchData,
-      @NonNull TextView watchLabel, @NonNull TextView weatherInfo, @NonNull TextView weatherLabel) {
+      @NonNull TextView watchLabel, @NonNull ImageView weatherIcon, @NonNull TextView weatherInfo,
+      @NonNull TextView weatherLabel) {
     this.rootView = rootView;
     this.watchData = watchData;
     this.watchLabel = watchLabel;
+    this.weatherIcon = weatherIcon;
     this.weatherInfo = weatherInfo;
     this.weatherLabel = weatherLabel;
   }
@@ -79,6 +85,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.weather_icon;
+      ImageView weatherIcon = ViewBindings.findChildViewById(rootView, id);
+      if (weatherIcon == null) {
+        break missingId;
+      }
+
       id = R.id.weather_info;
       TextView weatherInfo = ViewBindings.findChildViewById(rootView, id);
       if (weatherInfo == null) {
@@ -91,8 +103,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, watchData, watchLabel, weatherInfo,
-          weatherLabel);
+      return new FragmentHomeBinding((LinearLayout) rootView, watchData, watchLabel, weatherIcon,
+          weatherInfo, weatherLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

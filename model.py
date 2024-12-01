@@ -16,3 +16,4 @@ def train_model(X, y):
 
 def predict_next(data):
     return model.predict(data)
+>>>>>>> user-weather

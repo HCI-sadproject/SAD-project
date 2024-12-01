@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 설문 제목 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAD 초기 설문"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 섹션 1 제목 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. 지난 10년 간 아래 상황을 겪으신 적이 있나요?\n해당 상황을 겪으셨으면 yes를 반대의 경우 no를 선택해주세요."
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 섹션 1 질문들 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-1. 하루 중 많은 시간에 우울감과 무기력감을 느낀 적이 있다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/question1_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-2. 평소 나를 즐겁게 하던 것들이 더이상 행복감을 주지 못한 적이 있다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/question2_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-3. 평소 나를 즐겁게 하던 것들에 흥미를 잃은 적이 있다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/question3_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-4. 활동을 많이 하지 않았음에도 아주 피곤하거나 마모된 것 같은 기분을 느낀 적이 있다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/question4_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-5. 평소보다 낮은 에너지 레벨을 가진 적이 있다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/question5_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- 섹션 2 -->
+        <TextView
+            android:id="@+id/section2_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. 앞에서 '예'라고 대답했던 항목 중 2주 이상 지속된 항목이 하나 이상 존재하나요?\n존재할 경우 yes를 반대의 경우 no를 선택해주세요."
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/duration_question_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- 섹션 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 앞에서 경험한 문제들과 동시에 아래 문제를 함께 경험한 적이 있나요?\n해당 상황을 함께 겪으셨으면 yes를 반대의 경우 no를 선택해주세요."
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 섹션 3 질문들 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-1. 자신감 또는 자존감이 약화됨을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question1_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-2. 죄책감 또는 수치심을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question2_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-3. 집중력 감퇴를 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question3_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-4. 의사결정 혹은 명확한 생각이 필요한 상황에 어려움을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question4_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-5. 심하게 긴장하거나 안절부절 못하는 상태라고 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question5_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-6. 움직임이 심하게 느려짐을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question6_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-7. 사는 것에 의미가 없다고 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question7_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-8. 죽음을 생각했다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question8_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-9. 식욕의 변화함을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question9_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-10. 수면 패턴이 변화함을 느꼈다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question10_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-11. 체중이 3kg이상 줄거나 늘었다."
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/section3_question11_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- 섹션 4 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. 이런 불편함을 겪은 기간이 지난 10년간 몇 차례나 있었다고 생각하시나요?"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/frequency_question_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/frequency_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1번"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/frequency_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2번"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/frequency_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3번"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/frequency_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4번"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/frequency_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5번"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/frequency_more_than_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5번 이상"/>
+        </RadioGroup>
+
+        <!-- 섹션 5 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. 이 기간이 특정 계절에 나타나는 것 같다고 느끼시나요?\n그렇다면 yes를 반대의 경우 no를 선택해주세요."
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/seasonal_question_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- 계절성 연관성 측정 섹션 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6.어떤 계절에 우울 기간이 가장 흔하게 발생했나요?"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/season_question_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/season_spring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="봄"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/season_summer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여름"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/season_fall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가을"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/season_winter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="겨울"/>
+        </RadioGroup>
+
+        <!-- 우울 기간 빈도 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7. 지난 10년간 얼마나 많은 우울 기간(2주 이상)이 그 계절에 나타났나요?"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/depression_frequency_grid"
+            layout="@layout/number_selection_grid"/>
+
+        <!-- 최근 2년 우울기간 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8. 지난 2년 동안 우울기간(2주 이상)이 몇번 나타났나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/recent_depression_grid"
+            layout="@layout/number_selection_grid"/>
+
+        <!-- 2년 연속 발생 여부 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9. 이 계절에 발생한 우울 기간이 2년 연속 발생한 적이 있나요?"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/consecutive_years_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- GSS 섹션 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10. (GSS) 다음 항목이 계절에 따라 얼만큼 변화했나요?"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(0: 변화 없음, 1: 약간 변화함, 2: 보통 수준의 변화, 3: 눈에 띄는 변화, 4: 극적인 변화)"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 수면 길이 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수면 길이"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_sleep_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_sleep_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_sleep_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_sleep_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_sleep_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_sleep_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 사회적 활동 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사회적 활동"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_social_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_social_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_social_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_social_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_social_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_social_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 기분 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기분(전반적인 정신 건강 상태 혹은 행복감)"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_mood_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_mood_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_mood_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_mood_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_mood_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_mood_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 체중 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체중"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_weight_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_weight_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_weight_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_weight_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_weight_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_weight_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 식욕 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="식욕"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_appetite_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_appetite_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_appetite_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_appetite_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_appetite_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_appetite_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 에너지 레벨 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="에너지 레벨"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/gss_energy_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/gss_energy_0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <RadioButton
+                android:id="@+id/gss_energy_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <RadioButton
+                android:id="@+id/gss_energy_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <RadioButton
+                android:id="@+id/gss_energy_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <RadioButton
+                android:id="@+id/gss_energy_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"/>
+        </RadioGroup>
+
+        <!-- 월별 패턴 섹션 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11. 이어지는 항목이 주로 발생한 달을 하나 이상 체크해주세요. 만약 해당 항목의 변화가 미미한 경우 '특정 월 없음'을 선택하실 수 있습니다."
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 가장 기분 좋은 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 기분 좋은 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/best_mood_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+    
+
+        <!-- 가장 체중이 높은 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 체중이 높은 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/highest_weight_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 사회활동에 적극적인 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 사회활동에 적극적인 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/most_social_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 적게 자는 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 적게 자는 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/least_sleep_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 많이 먹는 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 많이 먹는 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/most_eating_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 체중이 많이 주는 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 체중이 많이 주는 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/most_weight_loss_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 사회활동에 소극적인 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 사회활동에 소극적인 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/least_social_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 기분 안 좋은 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 기분 안 좋은 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/worst_mood_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 적게 먹는 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 적게 먹는 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/least_eating_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 가장 많이 자는 달 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가장 많이 자는 달"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <include
+            android:id="@+id/most_sleep_month_grid"
+            layout="@layout/month_grid_layout"/>
+
+        <!-- 체중 변화 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12. 일 년 동안 체중이 얼만큼 변화하나요?"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/weight_change_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/weight_change_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2kg 미만"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/weight_change_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2kg 이상 3kg 미만"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/weight_change_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3kg 이상 4kg 미만"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/weight_change_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4kg 이상 6kg 미만"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/weight_change_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6kg 이상 7kg 미만"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/weight_change_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7kg 이상"/>
+        </RadioGroup>
+
+        <!-- 계절별 수면 시간 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="13. 각 계절에 대략 24시간 중 몇 시간을 주무시나요?(낮잠 포함)"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 겨울 수면 시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="겨울: "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/winter_sleep_hours"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 시간"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- 봄 수면 시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="봄: "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/spring_sleep_hours"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 시간"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- 여름 수면 시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여름: "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/summer_sleep_hours"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 시간"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- 가을 수면 시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가을: "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/fall_sleep_hours"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 시간"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- 계절성 변화 문제 인식 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="14. 계절에 따른 변화가 문제로 느껴지시나요?"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/seasonal_problem_group"
+            layout="@layout/yes_no_radio_group"/>
+
+        <!-- 제출 버튼 -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="제출하기"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
