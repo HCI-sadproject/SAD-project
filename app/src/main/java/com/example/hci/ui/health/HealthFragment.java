@@ -46,6 +46,13 @@ public class HealthFragment extends Fragment {
         binding = FragmentHealthBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // 오늘 날짜 가져오기
+        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        // Firestore에서 데이터 가져오기
+        if (currentUser != null) {
+            fetchUserData(currentUser.getUid(), currentDate);
+        }
+
         // Firebase 초기화
         db = FirebaseFirestore.getInstance();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -55,12 +62,7 @@ public class HealthFragment extends Fragment {
             // 상세 보기 화면으로 이동하는 로직 구현
         });
 
-        // 오늘 날짜 가져오기
-        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-        // Firestore에서 데이터 가져오기
-        if (currentUser != null) {
-            fetchUserData(currentUser.getUid(), currentDate);
-        }
+
 
 
 
