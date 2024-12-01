@@ -33,6 +33,11 @@ public class HealthFragment extends Fragment {
 
     private FragmentHealthBinding binding;
     private FirebaseFirestore db;
+    private FirebaseUser currentUser;
+
+    private LineChart sleepChart;
+    private LineChart stepsChart;
+    private LineChart depressionPredictionChart;
 
 
     @Override
@@ -71,7 +76,7 @@ public class HealthFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-    
+
     private void fetchUserData(String uid, String currentDate) {
         // Firestore에서 데이터 가져오기
         db.collection("dummy_user")
