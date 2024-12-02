@@ -319,13 +319,13 @@
                 android:id="@+id/energy_very_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아주 낮다"/>
+                android:text="아주 높다"/>
 
             <RadioButton
                 android:id="@+id/energy_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="낮다"/>
+                android:text="높다"/>
 
             <RadioButton
                 android:id="@+id/energy_normal"
@@ -337,13 +337,13 @@
                 android:id="@+id/energy_high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="높다"/>
+                android:text="낮다"/>
 
             <RadioButton
                 android:id="@+id/energy_very_high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아주 높다"/>
+                android:text="아주 낮다"/>
         </RadioGroup>
 
         <!-- 제출 버튼 -->
