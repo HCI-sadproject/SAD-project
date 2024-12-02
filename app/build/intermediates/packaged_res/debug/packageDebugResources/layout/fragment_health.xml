@@ -41,7 +41,7 @@
                 android:layout_gravity="start"
                 android:gravity="start"
                 android:padding="0dp"
-                android:text="Current Score"
+                android:text="현재 점수"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
                 android:id="@+id/current_score_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="22.13"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
@@ -74,7 +74,7 @@
                 android:layout_gravity="start"
                 android:gravity="start"
                 android:padding="0dp"
-                android:text="Prediction for Tomorrow"
+                android:text="내일 예측 점수"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 android:id="@+id/predict_score_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="20.82"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
@@ -121,7 +121,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Heart Rate"
+                android:text="심박수"
                 android:layout_marginStart="8dp"/>
 
 
@@ -141,7 +141,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Step Count"
+                android:text="걸음 수"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
 
@@ -159,7 +159,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sleep Duration"
+                android:text="수면 시간"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
     </LinearLayout>
@@ -176,7 +176,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Depression Score Plot"
+        android:text="우울 점수 그래프"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -190,7 +190,7 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/depressionPredictionChart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -200,7 +200,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Step Count Plot"
+        android:text="걸음 수 그래프"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -214,7 +214,7 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/stepsChart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -224,7 +224,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sleep Duration Plot"
+        android:text="수면시간 그래프"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -238,7 +238,7 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/sleepChart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"

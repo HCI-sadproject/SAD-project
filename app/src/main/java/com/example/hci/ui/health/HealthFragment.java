@@ -69,7 +69,112 @@ public class HealthFragment extends Fragment {
             // 상세 보기 화면으로 이동하는 로직 구현
         });
 
+        // 데이터 준비
+        List<Entry> depressionEntries = new ArrayList<>();
+        depressionEntries.add(new Entry(0, 23.52f));
+        depressionEntries.add(new Entry(1, 9.32f));
+        depressionEntries.add(new Entry(2, 14.97f));
+        depressionEntries.add(new Entry(3, 7.76f));
+        depressionEntries.add(new Entry(4, 17.07f));
+        depressionEntries.add(new Entry(5, 23.67f));
+        depressionEntries.add(new Entry(6, 15.27f));
 
+
+
+        // LineDataSet 생성
+        LineDataSet dataSet1 = new LineDataSet(depressionEntries, "Depression Data");
+        dataSet1.setColor(Color.parseColor("#615687")); // 보라색
+        dataSet1.setValueTextColor(Color.parseColor("#615687")); // 보라색
+
+
+ // 처음 값을 추출
+        List<Entry> predictionEntries = new ArrayList<>();
+        predictionEntries.add(new Entry(7, 13.76f)); // 리스트에 추가
+
+        LineDataSet predictionDataSet = new LineDataSet(predictionEntries, "Tomorrow");
+        predictionDataSet.setColor(Color.parseColor("#FF6347")); // 빨간색 (내일 점수)
+        predictionDataSet.setValueTextColor(Color.parseColor("#FF6347")); // 빨간색
+
+            // 데이터를 병합해 LineData에 추가
+        LineData depressionData = new LineData(dataSet1, predictionDataSet);
+
+
+        binding.depressionPredictionChart.setData(depressionData);
+
+        // X축 라벨 설정
+        String[] dates1 = {"10-27", "11-03", "11-10", "11-17", "11-24", "12-01", "12-03", "내일"};
+        XAxis xAxis1 = binding.depressionPredictionChart.getXAxis();
+        //xAxis.setValueFormatter((value, axis) -> dates[(int) value]); // 날짜 형식으로 표시
+        xAxis1.setGranularity(1f);  // X축 값 간격 설정
+        xAxis1.setGranularityEnabled(true);
+        xAxis1.setValueFormatter(new IndexAxisValueFormatter(dates1));
+
+        binding.depressionPredictionChart.invalidate(); // 차트 새로고침
+
+
+        // 데이터 준비
+        List<Entry> stepEntries = new ArrayList<>();
+        stepEntries.add(new Entry(1, 5559));
+        stepEntries.add(new Entry(2, 8052));
+        stepEntries.add(new Entry(3, 3439));
+        stepEntries.add(new Entry(4, 2199));
+        stepEntries.add(new Entry(5, 1623));
+        stepEntries.add(new Entry(6, 8355));
+        stepEntries.add(new Entry(7, 3706));
+        stepEntries.add(new Entry(8, 6624));
+
+
+
+        // LineDataSet 생성
+        LineDataSet dataSet2 = new LineDataSet(stepEntries, "Depression Data");
+        dataSet2.setColor(Color.parseColor("#F2BE5B")); // 노란색
+        dataSet2.setValueTextColor(Color.parseColor("#F2BE5B")); // 노란색
+
+        // LineData 객체 생성 및 차트에 설정
+        LineData lineData2 = new LineData(dataSet2);
+        binding.stepsChart.setData(lineData2);
+
+        // X축 라벨 설정
+        String[] dates2 = {"11-27", "11-28", "11-29", "11-30", "11-31", "12-1", "12-2","12-3"};
+        XAxis xAxis2 = binding.stepsChart.getXAxis();
+        //xAxis.setValueFormatter((value, axis) -> dates[(int) value]); // 날짜 형식으로 표시
+        xAxis2.setGranularity(1f);  // X축 값 간격 설정
+        xAxis2.setGranularityEnabled(true);
+        xAxis2.setValueFormatter(new IndexAxisValueFormatter(dates2));
+
+        binding.stepsChart.invalidate(); // 차트 새로고침
+
+
+
+        // 데이터 준비
+        List<Entry> sleepEntries = new ArrayList<>();
+        sleepEntries.add(new Entry(1, 5.07f));
+        sleepEntries.add(new Entry(2, 9.13f));
+        sleepEntries.add(new Entry(3, 5.58f));
+        sleepEntries.add(new Entry(4, 7.54f));
+        sleepEntries.add(new Entry(5, 11.91f));
+        sleepEntries.add(new Entry(6, 6.50f));
+        sleepEntries.add(new Entry(7, 5.34f));
+        sleepEntries.add(new Entry(8, 5.95f));
+
+
+
+        // LineDataSet 생성
+        LineDataSet dataSet = new LineDataSet(sleepEntries, "Sleep Data");
+
+        // LineData 객체 생성 및 차트에 설정
+        LineData lineData = new LineData(dataSet);
+        binding.sleepChart.setData(lineData);
+
+        // X축 라벨 설정
+        String[] dates = {"11-27", "11-28", "11-29", "11-30", "11-31", "12-1", "12-2","12-3"};
+        XAxis xAxis = binding.sleepChart.getXAxis();
+        //xAxis.setValueFormatter((value, axis) -> dates[(int) value]); // 날짜 형식으로 표시
+        xAxis.setGranularity(1f);  // X축 값 간격 설정
+        xAxis.setGranularityEnabled(true);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(dates));
+
+        binding.sleepChart.invalidate(); // 차트 새로고침
 
 
 
@@ -100,7 +205,7 @@ public class HealthFragment extends Fragment {
         // 각 데이터에 대해 8개 유효 데이터 가져오기
         fetchDataForChart(db, uid, "daily_sleep", calendar, sleepEntries, xLabels, 8, true);
         fetchDataForChart(db, uid, "daily_steps", calendar, stepsEntries, xLabels, 8, false);
-        fetchDataForChart(db, uid, "depression_score", calendar, depressionEntries, xLabels, 8, true);
+        fetchDataForChart(db, uid, "depression_score", calendar, depressionEntries, xLabels, 7, true);
 
         // 그래프 업데이트
         updateCharts(sleepEntries, stepsEntries, depressionEntries, xLabels);
@@ -109,12 +214,9 @@ public class HealthFragment extends Fragment {
     }
 
     private void fetchScoreData(String uid, String date, int retries) {
-        if (retries > 7) { // 최대 7일 전까지 검색
-            Log.d("Firebase", "No data found within the last 7 days.");
-            return;
-        }
+        if (retries < 7) { // 최대 7일 전까지 검색
 
-        db.collection("dummy_user")
+            db.collection("dummy_users")
                 .document(uid) // 사용자 UID로 문서 참조
                 .collection("time_series")
                 .document(date) // 현재 날짜로 문서 참조
@@ -142,6 +244,10 @@ public class HealthFragment extends Fragment {
                         Log.d("Firebase", "Error getting document: ", task.getException());
                     }
                 });
+            Log.d("Firebase", "No data found within the last 7 days.");
+            return;
+        }
+
 
 
     }
@@ -212,40 +318,51 @@ public class HealthFragment extends Fragment {
 
     private void updateCharts(List<Entry> sleepEntries, List<Entry> stepsEntries,
                               List<Entry> depressionEntries, List<String> xLabels) {
-        // LineDataSet 생성
+        // LineDataSet 생성 (수면)
         LineDataSet sleepDataSet = new LineDataSet(sleepEntries, "Sleep Hours");
-        sleepDataSet.setColor(Color.parseColor("#3F7098")); // 파란색 (#0000FF)
-        sleepDataSet.setValueTextColor(Color.parseColor("#3F7098")); // 파란색 (#0000FF)
+        sleepDataSet.setColor(Color.parseColor("#3F7098")); // 파란색
+        sleepDataSet.setValueTextColor(Color.parseColor("#3F7098")); // 파란색
 
+        // LineDataSet 생성 (걸음수)
         LineDataSet stepsDataSet = new LineDataSet(stepsEntries, "Steps");
-        stepsDataSet.setColor(Color.parseColor("#F2BE5B")); // 노란색 (#FFFF00)
-        stepsDataSet.setValueTextColor(Color.parseColor("#F2BE5B")); // 노란색 (#FFFF00)
+        stepsDataSet.setColor(Color.parseColor("#F2BE5B")); // 노란색
+        stepsDataSet.setValueTextColor(Color.parseColor("#F2BE5B")); // 노란색
 
+        // LineDataSet 생성 (우울 점수)
         LineDataSet depressionDataSet = new LineDataSet(depressionEntries, "Depression Score");
-        depressionDataSet.setColor(Color.parseColor("#615687")); // 보라색 (#800080)
-        depressionDataSet.setValueTextColor(Color.parseColor("#615687")); // 보라색 (#800080)
+        depressionDataSet.setColor(Color.parseColor("#615687")); // 보라색
+        depressionDataSet.setValueTextColor(Color.parseColor("#615687")); // 보라색
 
-        // LineData 설정
-        LineData sleepData = new LineData(sleepDataSet);
-        LineData stepsData = new LineData(stepsDataSet);
-        LineData depressionData = new LineData(depressionDataSet);
+        // 마지막 값(내일 예측 점수) 추가
+        if (!depressionEntries.isEmpty()) {
+            Entry predictionEntry = depressionEntries.remove(depressionEntries.size() - 1); // 마지막 값을 추출
+            List<Entry> predictionEntries = new ArrayList<>();
+            predictionEntries.add(predictionEntry); // 리스트에 추가
 
-        // 그래프 연결 및 x축 설정
-        setupChart(binding.sleepChart, sleepData, xLabels);
-        setupChart(binding.stepsChart, stepsData, xLabels);
-        setupChart(binding.depressionPredictionChart, depressionData, xLabels);
+            LineDataSet predictionDataSet = new LineDataSet(predictionEntries, "Tomorrow");
+            predictionDataSet.setColor(Color.parseColor("#FF6347")); // 빨간색 (내일 점수)
+            predictionDataSet.setValueTextColor(Color.parseColor("#FF6347")); // 빨간색
+
+            // 데이터를 병합해 LineData에 추가
+            LineData depressionData = new LineData(depressionDataSet, predictionDataSet);
+            setupChart(binding.depressionPredictionChart, depressionData, xLabels);
+        }
+
+        // 수면 및 걸음수 그래프 업데이트
+        setupChart(binding.sleepChart, new LineData(sleepDataSet), xLabels);
+        setupChart(binding.stepsChart, new LineData(stepsDataSet), xLabels);
     }
 
     private void setupChart(LineChart chart, LineData data, List<String> xLabels) {
         chart.setData(data);
 
-        // x축 레이블 설정
+        // x축 설정
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xLabels));
 
-        chart.invalidate(); // 그래프 업데이트
+        chart.invalidate(); // 그래프 새로고침
     }
 
 

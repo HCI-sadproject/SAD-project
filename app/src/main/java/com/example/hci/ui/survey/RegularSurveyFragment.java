@@ -53,6 +53,8 @@ import java.util.Locale;
  * 사용자의 현재 상태를 평가하고 데이터를 수집
  */
 public class RegularSurveyFragment extends Fragment {
+
+    private static final String FLASK_URL = "http://192.168.219.110:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
     private FragmentRegularSurveyBinding binding;
     private RegularSurveyViewModel viewModel;
     private static final String SURVEY_DATA_KEY = "regular_survey_data";
@@ -69,6 +71,26 @@ public class RegularSurveyFragment extends Fragment {
 
         setupInputFilters();
         setupSubmitButton();
+
+        super.onCreate(savedInstanceState);
+
+
+        // "Predict" 버튼을 클릭했을 때의 동작 설정
+        binding.submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Firebase에서 현재 로그인한 사용자 가져오기
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    String uid = user.getUid(); // Firebase 사용자 UID를 가져옴
+                    sendPredictionRequest(uid); // UID를 Flask 서버로 전송
+                } else {
+                    Log.e("RegularSurveyFragment", "uid 읽기 실패");
+                }
+            }
+        });
+
+
         return binding.getRoot();
     }
 
@@ -218,11 +240,9 @@ public class RegularSurveyFragment extends Fragment {
     }
 
     // 제출 버튼 리스너를 사용하고 있어서 이 리스너를 통해 데이터 저장도 해야한다면 같이 넣기
-
     public class PredictActivity extends AppCompatActivity {
 
-        private static final String FLASK_URL = "http://192.168.219.104:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
-        private FragmentRegularSurveyBinding binding; // ViewBinding을 사용하기 위한 변수
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -290,6 +310,43 @@ public class RegularSurveyFragment extends Fragment {
                 }
             }).start();
         }
+    }
+    private void sendPredictionRequest(String uid) {
+        new Thread(() -> {
+            try {
+                // Flask 서버의 예측 요청 URL에 연결
+                URL url = new URL(FLASK_URL);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setDoOutput(true);
+
+                // UID를 JSON 형식으로 생성
+                JSONObject jsonRequest = new JSONObject();
+                jsonRequest.put("uid", uid); // 요청 JSON에 UID 포함
+
+                // 서버로 JSON 데이터를 전송
+                OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+                writer.write(jsonRequest.toString());
+                writer.flush();
+                writer.close();
+
+                // 서버의 응답 코드 확인
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    Log.d("PredictActivity", "예측 요청 성공");
+                } else {
+                    Log.e("PredictActivity", "예측 요청 실패: " + responseCode);
+
+                }
+
+                connection.disconnect();
+            } catch (Exception e) {
+                // 예외 처리 (네트워크 오류, JSON 오류 등)
+                Log.e("PredictActivity", "예측 요청 중 오류 발생", e);
+
+            }
+        }).start();
     }
 
     /**
@@ -374,7 +431,7 @@ public class RegularSurveyFragment extends Fragment {
         }
 
         // 제출한 날짜+시간 형식으로 문서 이름 생성
-        String timestamp = new SimpleDateFormat("YYYY-MM-DD", Locale.getDefault()).format(new Date());
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
         // 설문 데이터 수집
         HashMap<String, Object> surveyData = new HashMap<>();
