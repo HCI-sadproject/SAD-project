@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify
 from lstm_model import predict_lstm, prepare_data, train_lstm
 #from xgboost_model import predict_xgboost
 #from regression_model import predict_regression
-#from var_model import predict_var
+from var_model import predict_var
 from firebase_admin import firestore
 from datetime import datetime, timedelta
 
@@ -40,16 +40,15 @@ def predict():
     print(f"Received UID: {uid}")
 
     # Firestore에서 데이터 가져오기
-    user_data = fetch_user_data(uid, db)
+    user_data, start_date, days_difference = fetch_user_data(uid, db)
     if user_data is None or user_data.size == 0:  # 배열이 비어 있는지 확인
         return jsonify({'error': 'No data found for this user'}), 404
     
     # 날짜 설정
     start_index = 0                  # 9월 1일부터 시작
-    end_index = 90                   # 10월 1일까지 학습
-    target_index = 91                # 10월 2일 예측
+    end_index = days_difference-7                   # 10월 1일까지 학습
+    target_index = days_difference               # 10월 2일 예측
 
-    #current_date += timedelta(days=1)
 
     # 데이터 준비
     X_train, Y_train, X_input = prepare_data(user_data, start_index, end_index, target_index)
@@ -69,17 +68,19 @@ def predict():
     #regression_prediction = predict_regression(uid)
 
     # VAR 모델로 예측 수행
-    #var_prediction = predict_var(uid)
+    var_prediction = predict_var(uid)
 
     # (선택적으로) 결과 평균 또는 특정 기준에 따라 최종 결과 결정
     #final_prediction = (lstm_prediction + xgboost_prediction + regression_prediction + var_prediction) / 4
-    final_prediction = lstm_prediction.item()
+    #final_prediction = lstm_prediction.item()
+    final_prediction = round(var_prediction + lstm_prediction.item() / 2,1)
 
 
     # 예측 결과를 Firebase에 저장
     save_prediction_to_firebase(uid, final_prediction, target_index)
     start_date = datetime(2024, 9, 1)
     current_date = start_date + timedelta(days=target_index)
+    print(f"final prediction: {final_prediction}")
 
     return jsonify({"uid": uid, "prediction": final_prediction, "saved_date":current_date})
 
@@ -119,7 +120,7 @@ def save_test_data():
     #"age": 25,
     #"seasonal_score": 18,
     #}
-    generate_dummy_data(5)
+    generate_dummy_data(1)
     return "Dummy data successfully created and stored in Firestore!"
 
 # 앱 실행

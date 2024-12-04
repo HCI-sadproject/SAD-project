@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 # Flask 앱 생성
 app = Flask(__name__)
 
-# 기본 루트 경로 설정 (예: http://localhost:5000)
+# 기본 루트 경로 설정 (예: http://0.0.0.0:5000)
 @app.route('/')
 def home():
     return "Hello, Flask!"
@@ -24,4 +24,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
-

@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-from firebase_admin import firestore
-
-# Firebase 초기화
-#cred = credentials.Certificate("sadhci-firebase-adminsdk-brw57-32beea99c0.json")
-#firebase_admin.initialize_app(cred)
-
-
-import firebase_admin
-from firebase_admin import credentials
-
-cred = credentials.Certificate("sadhci-firebase-adminsdk-brw57-32beea99c0.json")
-firebase_admin.initialize_app(cred)
-db = firestore.client()
-
-def fetch_data():
-    docs = db.collection("your_collection_name").stream()
-    data = []
-    for doc in docs:
-        data.append(doc.to_dict())
-    return data
-
-def save_data(new_data):
-    db.collection("your_collection_name").add(new_data)
-=======
 import firebase_admin
 from firebase_admin import firestore
 from firebase_admin import credentials
@@ -49,6 +24,7 @@ def fetch_user_data(uid, db):
 
         # 데이터 저장용 리스트
         data = []
+        dates = []  # 날짜를 저장할 리스트
         for doc in docs:
             doc_data = doc.to_dict()
             print(f"Fetched document: {doc.id}, Data: {doc_data}")
@@ -57,7 +33,8 @@ def fetch_user_data(uid, db):
             if "time" not in doc_data:
                 print(f"Missing 'time' field in document: {doc.id}")
             else:
-                print(f"Document {doc.id}, time field: {doc_data['time']}")
+                #print(f"Document {doc.id}, time field: {doc_data['time']}")
+                dates.append(doc_data['time'])
 
             # daily_sleep, daily_steps, daily_sunlight, depression_score 순으로 저장
             data.append([
@@ -74,9 +51,23 @@ def fetch_user_data(uid, db):
         if user_data.size == 0:
             print(f"No data found for UID: {uid}")
             return None
+        
+        # 날짜 차이 계산
+        if dates:
+            # 문자열을 datetime 객체로 변환
+            start_date = datetime.strptime(dates[0], "%Y-%m-%d")
+            end_date = datetime.strptime(dates[-1], "%Y-%m-%d")
+    
+            # 날짜 차이 계산
+            days_difference = (end_date - start_date).days
+            print(f"Start date: {start_date.strftime('%Y-%m-%d')}")
+            print(f"End date: {end_date.strftime('%Y-%m-%d')}")
+            print(f"Number of days: {days_difference} days")
+        else:
+            print("No valid dates found.")
 
         print("Data fetched successfully!")
-        return user_data
+        return user_data, start_date, days_difference
 
     except Exception as e:
         print(f"Error fetching data for UID {uid}: {e}")
@@ -117,4 +108,3 @@ def get_user_timeseries(uid):
     user_ref = db.collection('dummy_users').document(uid).collection("time_series")
     user_data = user_ref.get().to_dict()
     return user_data
->>>>>>> 351c076b43e4deb842bc937640298f8d33497673
