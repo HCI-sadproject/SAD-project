@@ -50,8 +50,8 @@
                 android:id="@+id/current_score_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15.27"
-                android:textSize="50sp"
+                android:text="..."
+                android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
                 android:layout_gravity="center" />
@@ -83,8 +83,8 @@
                 android:id="@+id/predict_score_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="13.76"
-                android:textSize="50sp"
+                android:text="..."
+                android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#D87A76"
                 android:layout_gravity="center" />

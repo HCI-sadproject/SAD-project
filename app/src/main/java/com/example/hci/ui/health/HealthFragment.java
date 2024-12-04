@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Calendar;
 import android.graphics.Color;
+import java.util.TimeZone;
 
 public class HealthFragment extends Fragment {
 
@@ -54,9 +55,13 @@ public class HealthFragment extends Fragment {
         // Firebase 초기화
         db = FirebaseFirestore.getInstance();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Log.d("Firebase", "uid : " + currentUser.getUid());
 
         // 오늘 날짜 가져오기
-        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        sdf.setTimeZone(TimeZone.getTimeZone("Asia/Seoul")); // 한국 시간대
+        String currentDate = sdf.format(new Date());
+        Log.d("Date", "Correct Date: " + currentDate);
         // Firestore에서 데이터 가져오기
         if (currentUser != null) {
             fetchUserData(currentUser.getUid(), currentDate);
@@ -214,11 +219,9 @@ public class HealthFragment extends Fragment {
     }
 
     private void fetchScoreData(String uid, String date, int retries) {
-        if (retries < 7) { // 최대 7일 전까지 검색
 
-            db.collection("dummy_users")
-                .document(uid) // 사용자 UID로 문서 참조
-                .collection("time_series")
+        db = FirebaseFirestore.getInstance();
+        db.collection("dummy_users").document(uid).collection("time_series")
                 .document(date) // 현재 날짜로 문서 참조
                 .get()
                 .addOnCompleteListener(task -> {
@@ -227,26 +230,30 @@ public class HealthFragment extends Fragment {
                         if (document.exists() && document.getData() != null) {
                             // 데이터가 존재하면
                             Double depressionScore = document.getDouble("depression_score");
-                            Double predictionScore = document.getDouble("prediction_score");
+                            Object rawPrediction = document.get("final_prediction");
+                            if (rawPrediction instanceof Number) {
+                                Double predictionScore = ((Number) rawPrediction).doubleValue();
 
-                            if (depressionScore != null && predictionScore != null) {
-                                // 데이터 UI에 표시
+                                Log.d("Firebase", "Prediction Score: " + predictionScore);
                                 displayData(depressionScore, predictionScore);
+                                Log.d("Firebase", "p");
                             } else {
-                                // 값이 null인 경우 전날 데이터 검색
-                                fetchScoreData(uid, getPreviousDate(date), retries + 1);
+                                Log.e("Firebase", "'final_prediction' is not a Number type." + rawPrediction.getClass().getSimpleName());
                             }
+
+
                         } else {
                             // 문서가 없으면 전날 데이터 검색
                             fetchScoreData(uid, getPreviousDate(date), retries + 1);
+                            Log.d("Firebase", "dep score:2");
                         }
                     } else {
                         Log.d("Firebase", "Error getting document: ", task.getException());
                     }
                 });
-            Log.d("Firebase", "No data found within the last 7 days.");
-            return;
-        }
+            //Log.d("Firebase", "No data found within the last 7 days.");
+            //return;
+
 
 
 
@@ -273,8 +280,10 @@ public class HealthFragment extends Fragment {
 
     private void displayData(double depressionScore, double predictionScore) {
         // 텍스트 뷰에 데이터 설정
-        binding.currentScoreValue.setText(String.format("Depression Score: %.1f", depressionScore));
-        binding.predictScoreValue.setText(String.format("Prediction Score: %.1f", predictionScore));
+        binding.currentScoreValue.setText(String.format("%.1f", depressionScore));
+
+        binding.predictScoreValue.setText(String.format("%.1f", predictionScore));
+
     }
 
     private void fetchDataForChart(FirebaseFirestore db, String userId, String field,
