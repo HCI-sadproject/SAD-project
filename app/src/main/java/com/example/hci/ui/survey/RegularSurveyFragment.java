@@ -54,7 +54,7 @@ import java.util.Locale;
  */
 public class RegularSurveyFragment extends Fragment {
 
-    private static final String FLASK_URL = "http://172.30.1.24:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
+    private static final String FLASK_URL = "http://192.168.219.102:5000/predict"; // Flask 서버 URL (IP 주소는 변경 필요)
     private FragmentRegularSurveyBinding binding;
     private RegularSurveyViewModel viewModel;
     private static final String SURVEY_DATA_KEY = "regular_survey_data";

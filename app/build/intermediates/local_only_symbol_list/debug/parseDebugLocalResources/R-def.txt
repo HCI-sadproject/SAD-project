@@ -322,3 +322,4 @@ string weather_icon
 style Theme.HCI
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config

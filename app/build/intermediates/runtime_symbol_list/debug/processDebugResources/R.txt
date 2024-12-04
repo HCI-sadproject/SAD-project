@@ -3357,10 +3357,10 @@ int id browser_actions_menu_item_icon 0x7f090074
 int id browser_actions_menu_item_text 0x7f090075
 int id browser_actions_menu_items 0x7f090076
 int id browser_actions_menu_view 0x7f090077
-int id btnOne 0x7f0902f7
-int id btnThree 0x7f0902f8
-int id btnTwo 0x7f0902f9
-int id btn_connect 0x7f09007a
+int id btnOne 0x7f090078
+int id btnThree 0x7f090079
+int id btnTwo 0x7f09007a
+int id btn_connect 0x7f09007b
 int id btn_light_toggle 0x7f09007c
 int id btn_view_more 0x7f09007d
 int id buttonPanel 0x7f09007e
@@ -7708,3 +7708,4 @@ int xml backup_rules 0x7f160000
 int xml data_extraction_rules 0x7f160001
 int xml ga_ad_services_config 0x7f160002
 int xml image_share_filepaths 0x7f160003
+int xml network_security_config 0x7f160004
