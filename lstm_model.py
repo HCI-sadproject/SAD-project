@@ -24,14 +24,14 @@ def prepare_data(data, start_index, end_index, target_index):
     X = []
     Y = []
     for i in range(start_index, end_index):
-        X.append(data[i:i+30, :-1])  # 입력 데이터: daily_sleep, daily_steps, daily_sunlight
-        Y.append(data[i+30, -1])    # 타겟 데이터: depression_score
+        X.append(data[i:i+7, :-1])  # 입력 데이터: daily_sleep, daily_steps, daily_sunlight
+        Y.append(data[i+7, -1])    # 타겟 데이터: depression_score
 
     X = np.array(X)
     Y = np.array(Y)
 
     # 예측 입력 데이터
-    X_input = data[target_index-30:target_index, :-1]  # 마지막 30일 데이터
+    X_input = data[target_index-7:target_index, :-1]  # 마지막 30일 데이터
 
     return X, Y, X_input.reshape(1, X_input.shape[0], X_input.shape[1])
 

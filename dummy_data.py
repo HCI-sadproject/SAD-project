@@ -48,7 +48,7 @@ def generate_dummy_data(num_users=5):
         age = round(random.randint(18, 40),0)
         user = auth.create_user(
             email=f"{name.replace(' ', '')}{num}@example.com",
-            password=f"securepassword123{name.replace(' ', '')}{num}"
+            password=f"secure123"
         )
 
         profile_data = {
@@ -57,15 +57,17 @@ def generate_dummy_data(num_users=5):
             "seasonal_score": GSS,
         }
         uid = user.uid  # 생성된 사용자의 UID 가져오기
+        uid = "LY40eqAQxBOPTS0EvINK5YbHcRs1"  # 생성된 사용자의 UID 가져오기
+
 
         # Firestore에 사용자 데이터 저장
-        db.collection("dummy_users").document(uid).set({
-            "profile": profile_data
-        })
+        #db.collection("dummy_users").document(uid).set({
+        #    "profile": profile_data
+        #})
         print(f"User created with UID: {uid}")
 
         start_date = datetime(2024, 9, 1)
-        end_date = datetime(2024, 12, 3)
+        end_date = datetime(2024, 12, 5)
         previous_depression_score = random.uniform(11, 24)  # 초기 우울감 점수 랜덤 설정
 
         # Firestore 저장
