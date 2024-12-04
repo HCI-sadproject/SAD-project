@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import android.widget.Button;
+import androidx.annotation.Nullable;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -22,8 +24,17 @@ import com.example.hci.bluetooth.BluetoothManager;
 
 import java.io.IOException;
 import java.util.Set;
+import android.graphics.Color;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class LightingFragment extends Fragment {
+
+    private final List<Map<String, Object>> colors = new ArrayList<>();
+    public static double publicValue = 15.27; // 조건에 사용할 public 변수
 
     private FragmentLightingBinding binding;
     private LightingViewModel lightingViewModel;
@@ -37,13 +48,78 @@ public class LightingFragment extends Fragment {
         binding = FragmentLightingBinding.inflate(inflater, container, false);
         lightingViewModel = new ViewModelProvider(this).get(LightingViewModel.class);
 
-        setupButtons();
+        // 색상 데이터 초기화
+        initializeColors();
+
+        // 조건에 따라 색상 필터링
+        List<Map<String, Object>> filteredColors = filterColors(publicValue);
+
+        // 랜덤으로 중복되지 않는 색상 3개 선택
+        List<Map<String, Object>> randomColors = getRandomColors(filteredColors, 3);
+
+        // 버튼에 랜덤 색상 설정 및 이벤트 연결
+        setupButtons(randomColors);
+
+        //setupButtons();
         observeViewModel();
 
         return binding.getRoot();
     }
 
-    private void setupButtons() {
+    // 색상 데이터 초기화
+    private void initializeColors() {
+        colors.clear();
+        colors.add(createColor("IndiRed", 205, 92, 92));
+        colors.add(createColor("FireBrick", 178, 34, 34));
+        colors.add(createColor("Salmon", 250, 128, 114));
+        colors.add(createColor("DarkOrange", 255, 140, 0));
+        colors.add(createColor("Wheat", 245, 222, 179));
+        colors.add(createColor("Gold", 255, 215, 0));
+        colors.add(createColor("Olive", 128, 128, 0));
+        colors.add(createColor("Forest", 34, 139, 34));
+        colors.add(createColor("Aqua", 127, 256, 212));
+        colors.add(createColor("Violet", 102, 51, 153));
+        colors.add(createColor("DeepSky", 0, 191, 255));
+        colors.add(createColor("Lavender", 230, 230, 250));
+        colors.add(createColor("Pink", 255, 182, 193));
+
+    }
+
+    // 특정 조건에 따라 색상 필터링
+    private List<Map<String, Object>> filterColors(double value) {
+        List<Map<String, Object>> filteredColors = new ArrayList<>();
+        if(value > 11){
+            filteredColors.add(createColor("IndiRed", 205, 92, 92));
+            filteredColors.add(createColor("FireBrick", 178, 34, 34));
+            filteredColors.add(createColor("Salmon", 250, 128, 114));
+            filteredColors.add(createColor("DarkOrange", 255, 140, 0));
+            filteredColors.add(createColor("Wheat", 245, 222, 179));
+            filteredColors.add(createColor("Gold", 255, 215, 0));
+            filteredColors.add(createColor("Pink", 255, 182, 193));
+        } else {
+            filteredColors = colors;
+        }
+        return filteredColors;
+    }
+
+    // 색상 정보 생성
+    private Map<String, Object> createColor(String name, int r, int g, int b) {
+        Map<String, Object> color = new HashMap<>();
+        color.put("name", name); // 색상 이름
+        color.put("r", r);
+        color.put("g", g);
+        color.put("b", b);
+        return color;
+    }
+
+    private List<Map<String, Object>> getRandomColors(List<Map<String, Object>> availableColors, int count) {
+        List<Map<String, Object>> shuffledColors = new ArrayList<>(availableColors);
+        Collections.shuffle(shuffledColors); // 랜덤으로 섞기
+        return shuffledColors.subList(0, Math.min(count, shuffledColors.size())); // 원하는 개수만큼 반환
+    }
+
+
+    private void setupButtons(List<Map<String, Object>> colors) {
         // 블루투스 연결 버튼
         binding.btnConnect.setOnClickListener(v -> {
             checkBluetoothPermissions();
@@ -61,31 +137,56 @@ public class LightingFragment extends Fragment {
             }
         });
 
-        binding.btnBlue.setOnClickListener(v -> {
+        Map<String, Object> color1 = colors.get(0);
+        String colorName1 = (String) color1.get("name");
+        int r1 = (int)color1.get("r");
+        int g1 = (int)color1.get("g");
+        int b1 = (int)color1.get("b");
+        binding.btnOne.setText(colorName1);
+        binding.btnOne.setBackgroundColor(Color.rgb(r1,g1,b1)); // 배경색 설정
+
+        binding.btnOne.setOnClickListener(v -> {
             if (lightingViewModel.getIsConnected().getValue() != null && 
                 lightingViewModel.getIsConnected().getValue()) {
-                sendColorCommand(0, 0, 255);
-                showToast("블루 색상이 선택되었습니다");
+                sendColorCommand(r1,g1,b1);
+                showToast(colorName1+" 색상이 선택되었습니다");
             } else {
                 showToast("블루투스가 연결되지 않았습니다");
             }
         });
 
-        binding.btnGreen.setOnClickListener(v -> {
+        Map<String, Object> color2 = colors.get(1);
+        String colorName2 = (String) color2.get("name");
+        int r2 = (int)color2.get("r");
+        int g2 = (int)color2.get("g");
+        int b2 = (int)color2.get("b");
+        binding.btnTwo.setText(colorName2);
+        binding.btnTwo.setBackgroundColor(Color.rgb(r2,g2,b2)); // 배경색 설정
+
+        binding.btnTwo.setOnClickListener(v -> {
             if (lightingViewModel.getIsConnected().getValue() != null && 
                 lightingViewModel.getIsConnected().getValue()) {
-                sendColorCommand(0, 255, 0);
-                showToast("그린 색상이 선택되었습니다");
+                sendColorCommand(r2,g2,b2);
+                showToast(colorName2+" 색상이 선택되었습니다");
             } else {
                 showToast("블루투스가 연결되지 않았습니다");
             }
         });
 
-        binding.btnBrown.setOnClickListener(v -> {
+        Map<String, Object> color3 = colors.get(2);
+        String colorName3 = (String) color3.get("name");
+        int r3 = (int)color3.get("r");
+        int g3 = (int)color3.get("g");
+        int b3 = (int)color3.get("b");
+        binding.btnThree.setText(colorName3);
+        binding.btnThree.setBackgroundColor(Color.rgb(r3,g3,b3)); // 배경색 설정
+
+
+        binding.btnThree.setOnClickListener(v -> {
             if (lightingViewModel.getIsConnected().getValue() != null && 
                 lightingViewModel.getIsConnected().getValue()) {
-                sendColorCommand(165, 42, 42);
-                showToast("브라운 색상이 선택되었습니다");
+                sendColorCommand(r3,g3,b3);
+                showToast(colorName2+" 색상이 선택되었습니다");
             } else {
                 showToast("블루투스가 연결되지 않았습니다");
             }
@@ -121,6 +222,7 @@ public class LightingFragment extends Fragment {
             }
         }).start();
     }
+
 
     private void sendColorCommand(int red, int green, int blue) {
         String command = String.format("C%d,%d,%d", red, green, blue);
@@ -181,9 +283,9 @@ public class LightingFragment extends Fragment {
         lightingViewModel.getIsConnected().observe(getViewLifecycleOwner(), isConnected -> {
             // 연결 상태에 따른 UI 업데이트
             binding.btnLightToggle.setEnabled(isConnected);
-            binding.btnBlue.setEnabled(isConnected);
-            binding.btnGreen.setEnabled(isConnected);
-            binding.btnBrown.setEnabled(isConnected);
+            binding.btnOne.setEnabled(isConnected);
+            binding.btnTwo.setEnabled(isConnected);
+            binding.btnThree.setEnabled(isConnected);
         });
     }
 
