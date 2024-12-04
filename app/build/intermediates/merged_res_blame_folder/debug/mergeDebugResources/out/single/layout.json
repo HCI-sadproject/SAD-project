@@ -16,10 +16,6 @@
         "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\number_selection_grid.xml"
     },
     {
-        "merged": "com.example.hci.app-mergeDebugResources-57:/layout/fragment_health.xml",
-        "source": "com.example.hci.app-main-60:/layout/fragment_health.xml"
-    },
-    {
         "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_home.xml"
     },
@@ -50,6 +46,10 @@
     {
         "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\fragment_diary.xml",
         "source": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-main-60:\\layout\\fragment_diary.xml"
+    },
+    {
+        "merged": "com.example.hci.app-mergeDebugResources-57:/layout/fragment_lighting.xml",
+        "source": "com.example.hci.app-main-60:/layout/fragment_lighting.xml"
     },
     {
         "merged": "C:\\Users\\KJY\\.gradle\\daemon\\8.7\\com.example.hci.app-mergeDebugResources-57:\\layout\\month_grid_layout.xml",

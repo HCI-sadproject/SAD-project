@@ -3357,10 +3357,10 @@ int id browser_actions_menu_item_icon 0x7f090074
 int id browser_actions_menu_item_text 0x7f090075
 int id browser_actions_menu_items 0x7f090076
 int id browser_actions_menu_view 0x7f090077
-int id btn_blue 0x7f090078
-int id btn_brown 0x7f090079
+int id btnOne 0x7f0902f7
+int id btnThree 0x7f0902f8
+int id btnTwo 0x7f0902f9
 int id btn_connect 0x7f09007a
-int id btn_green 0x7f09007b
 int id btn_light_toggle 0x7f09007c
 int id btn_view_more 0x7f09007d
 int id buttonPanel 0x7f09007e

@@ -23,19 +23,19 @@ public final class FragmentLightingBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final Button btnBlue;
-
-  @NonNull
-  public final Button btnBrown;
-
-  @NonNull
   public final Button btnConnect;
 
   @NonNull
-  public final Button btnGreen;
+  public final Button btnLightToggle;
 
   @NonNull
-  public final Button btnLightToggle;
+  public final Button btnOne;
+
+  @NonNull
+  public final Button btnThree;
+
+  @NonNull
+  public final Button btnTwo;
 
   @NonNull
   public final LinearLayout colorButtons;
@@ -55,18 +55,18 @@ public final class FragmentLightingBinding implements ViewBinding {
   @NonNull
   public final TextView paletteTitle;
 
-  private FragmentLightingBinding(@NonNull ScrollView rootView, @NonNull Button btnBlue,
-      @NonNull Button btnBrown, @NonNull Button btnConnect, @NonNull Button btnGreen,
-      @NonNull Button btnLightToggle, @NonNull LinearLayout colorButtons,
+  private FragmentLightingBinding(@NonNull ScrollView rootView, @NonNull Button btnConnect,
+      @NonNull Button btnLightToggle, @NonNull Button btnOne, @NonNull Button btnThree,
+      @NonNull Button btnTwo, @NonNull LinearLayout colorButtons,
       @NonNull ColorPickerView colorPicker, @NonNull TextView colorTitle,
       @NonNull LinearLayout connectionSection, @NonNull TextView connectionStatus,
       @NonNull TextView paletteTitle) {
     this.rootView = rootView;
-    this.btnBlue = btnBlue;
-    this.btnBrown = btnBrown;
     this.btnConnect = btnConnect;
-    this.btnGreen = btnGreen;
     this.btnLightToggle = btnLightToggle;
+    this.btnOne = btnOne;
+    this.btnThree = btnThree;
+    this.btnTwo = btnTwo;
     this.colorButtons = colorButtons;
     this.colorPicker = colorPicker;
     this.colorTitle = colorTitle;
@@ -102,33 +102,33 @@ public final class FragmentLightingBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_blue;
-      Button btnBlue = ViewBindings.findChildViewById(rootView, id);
-      if (btnBlue == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_brown;
-      Button btnBrown = ViewBindings.findChildViewById(rootView, id);
-      if (btnBrown == null) {
-        break missingId;
-      }
-
       id = R.id.btn_connect;
       Button btnConnect = ViewBindings.findChildViewById(rootView, id);
       if (btnConnect == null) {
         break missingId;
       }
 
-      id = R.id.btn_green;
-      Button btnGreen = ViewBindings.findChildViewById(rootView, id);
-      if (btnGreen == null) {
-        break missingId;
-      }
-
       id = R.id.btn_light_toggle;
       Button btnLightToggle = ViewBindings.findChildViewById(rootView, id);
       if (btnLightToggle == null) {
+        break missingId;
+      }
+
+      id = R.id.btnOne;
+      Button btnOne = ViewBindings.findChildViewById(rootView, id);
+      if (btnOne == null) {
+        break missingId;
+      }
+
+      id = R.id.btnThree;
+      Button btnThree = ViewBindings.findChildViewById(rootView, id);
+      if (btnThree == null) {
+        break missingId;
+      }
+
+      id = R.id.btnTwo;
+      Button btnTwo = ViewBindings.findChildViewById(rootView, id);
+      if (btnTwo == null) {
         break missingId;
       }
 
@@ -168,8 +168,8 @@ public final class FragmentLightingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLightingBinding((ScrollView) rootView, btnBlue, btnBrown, btnConnect,
-          btnGreen, btnLightToggle, colorButtons, colorPicker, colorTitle, connectionSection,
+      return new FragmentLightingBinding((ScrollView) rootView, btnConnect, btnLightToggle, btnOne,
+          btnThree, btnTwo, colorButtons, colorPicker, colorTitle, connectionSection,
           connectionStatus, paletteTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);

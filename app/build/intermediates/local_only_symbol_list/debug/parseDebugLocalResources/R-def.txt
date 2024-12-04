@@ -65,10 +65,10 @@ id appetite_very_high
 id appetite_very_low
 id backButton
 id best_mood_month_grid
-id btn_blue
-id btn_brown
+id btnOne
+id btnThree
+id btnTwo
 id btn_connect
-id btn_green
 id btn_light_toggle
 id btn_view_more
 id colorPicker
