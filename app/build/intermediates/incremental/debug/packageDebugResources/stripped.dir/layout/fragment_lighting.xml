@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ui.Lighting.LightingFragment">
+
+        <!-- 연결 상태 섹션 -->
+        <LinearLayout
+            android:id="@+id/connection_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="블루투스 연결"/>
+
+            <TextView
+                android:id="@+id/connection_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="연결 상태: 연결되지 않음"/>
+        </LinearLayout>
+
+        <!-- 추천 색상 섹션 -->
+        <TextView
+            android:id="@+id/color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘의 추천 색상"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/connection_section"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/color_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/color_title">
+
+            <Button
+                android:id="@+id/btnOne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="블루"
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/btnTwo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="그린"
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/btnThree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="브라운"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <!-- 팔레트 섹션 -->
+        <TextView
+            android:id="@+id/palette_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="팔레트"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/color_buttons"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <top.defaults.colorpicker.ColorPickerView
+            android:id="@+id/colorPicker"
+            android:layout_width="315dp"
+            android:layout_height="409dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/palette_title"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <!-- 조명 제어 버튼 -->
+        <Button
+            android:id="@+id/btn_light_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="조명 On/Off"
+            android:textColor="@android:color/white"
+            android:background="@android:color/black"
+            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/colorPicker"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
